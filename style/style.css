@@ -1,0 +1,1140 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;      
+   text-decoration: none;
+   list-style-type: none;    
+}
+
+@font-face {
+
+   font-family: 'Richard Samuels';
+   src: url(../assets/ttf/richard_samuels/Richard\ Samuels.otf) ;
+}
+
+@font-face {
+  font-family:'Abril Fantface' ;
+  src: url(../assets/ttf/abril-fatface/AbrilFatface-Regular.ttf);
+}
+
+@font-face {
+  font-family:'Cabin-Medium' ;
+  src: url(../assets/ttf/cabin/cabin\ font\ v1.5/);
+}
+
+@font-face {
+  font-family:'Fowviel' ;
+  src: url(../assets/ttf/fowviel/Fowviel.ttf);
+}
+
+/*General*/
+  
+
+
+
+
+/*Header */
+.header 
+
+{   background-color: hsl(288, 89%, 17%);
+    box-shadow: 1px 1px 5px 0px var(--grey);   
+    top: 0;
+    width: 100%;
+    display: flex;   
+    align-items: center;
+    justify-content: space-between;
+   
+}
+
+.header__logo{
+
+     
+    width: 150px;
+    height: 150px;   
+      
+   
+ }
+
+.nav
+{
+    display: inline-block;
+    width: 100%;
+    height: 100%; 
+    margin: 20px; 
+    font-size: 20px;     
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .5s ease-out;
+    
+
+}
+
+.menu a
+{
+    display: block;
+    padding: 20px;    
+    color:rgb(230, 180, 240);
+}
+
+   
+
+.hamb
+{
+  display: block;  
+  position: absolute;
+  padding: 40px 20px;   
+  top: 30px;
+  right: 20px;   
+  cursor: pointer;
+
+}
+
+.hamb-line 
+{
+    background:rgb(207, 163, 207);
+    display: block;
+    height: 3px;
+    position: relative;
+    width: 24px;
+    margin-right: 20px;
+    
+}
+
+.hamb-line::before,
+.hamb-line::after
+{
+    background:white;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+   
+}
+
+.hamb-line::before
+{
+    top: 5px;
+}
+
+.hamb-line::after
+{
+    top: -5px;
+}
+
+.side-menu 
+{
+    display: none;
+}
+
+.side-menu:checked ~ nav
+{
+    max-height: 100%;
+}
+
+.side-menu:checked ~ .hamb .hamb-line 
+{
+    background: transparent;
+}
+
+.side-menu:checked ~ .hamb .hamb-line::before 
+{
+    transform: rotate(-45deg);
+    top:0;
+}
+
+.side-menu:checked ~ .hamb .hamb-line::after 
+{
+    transform: rotate(45deg);
+    top:0;
+}
+
+
+
+
+
+
+/*PORTADA*/
+
+body{
+  background-color: #fcd3e8;
+  width: 100%;
+  margin: 0;
+}
+
+
+
+/*PORTADA CONSULTORIA*/
+.container__port{
+ 
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  
+}
+
+
+.container__port img{
+ width: 100%;
+ max-height: 400px; 
+
+}
+  
+ 
+.container__port h1{
+  
+    
+    display: flex;
+    align-items: center;
+    font-size: 60px; 
+    position: absolute; 
+    color:rgb(82, 5, 82);
+    text-shadow: -1px -1px 5px #eebdee,
+    0 0 1px rgb(203, 148, 235),
+    1px 1px 1px rgb(167, 44, 238),
+    2px 2px 1px #555,
+    3px 3px 1px #222,
+    4px 4px 1px #000;      
+ 
+ }
+
+
+/*PORTADA PAG CONTACTO*/
+
+.container-contacto{
+position: relative;
+  width: 100%;
+}
+.container-contacto img{
+ width: 100%;
+ max-height: 400px;
+ object-fit:fill;
+
+}
+
+.container-contacto .center{
+   
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 70px;
+    color:#db95b2;
+  }
+
+
+
+
+/*MAIN index*/
+/*portada*/
+
+.portada{
+  margin-bottom: 40px;
+  text-align: center;  
+  font-size: 40px;
+ 
+}
+
+/*servicios*/
+.servicios {
+
+  margin-top: 60px;
+  padding: 0 20px;
+  
+} 
+
+.servicios__titulo{
+
+  font-size: 10vh;
+  font-family: 'Richard Samuels';
+  color: darkmagenta;
+  text-align: center;
+  padding: 10vh;
+
+}    
+ /*cards*/
+
+ .servicios__cards{
+
+   max-width: 1200px;
+   margin: 0 auto;
+   display: grid;
+   grid-template-columns: 1fr;
+   gap: 50px;
+   text-align: center;
+   justify-content: center;
+   align-content: center;
+  
+  
+ }  
+
+
+ .card{
+  
+    box-shadow: 0px 1px 10px rgba(0,0,0,2);
+    cursor: default;
+    transition: all 400ms ease; 
+    border-radius: 5%;
+    padding: 20px;     
+    object-fit: cover;
+    height: 500px;
+  }
+
+.card__header img{
+
+   width: 100%;
+   height: 65vh;
+   border-radius: 5%; 
+ 
+
+}
+
+.card:hover{
+    box-shadow: 5px 5px 20px rgb(240, 133, 186);
+    transform: translateY(-3%);
+  
+}
+
+.card__title{
+
+   font-family: 'Richard Samuels';
+   padding-top: 10px;
+   color: #7c0647;
+   font-size: 25px;
+}
+
+   
+  
+.card__descripcion{
+
+   color: #6e0d59;
+   font-size: 20px;
+   margin-bottom: 30px;
+   font-family: 'Fowviel';
+}  
+  
+.card__link{
+  color: #fff;
+  background-color: #850d67;
+  border: 3px solid #f0c8df;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+   
+}
+
+
+
+/*-----------ubicacion y newaletter----------------*/
+
+.ubicacionNewsletter{
+
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  gap: 20px;
+  justify-items: center;
+  
+
+}
+
+.ubicacionNewsletter__ubicacion{
+
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  width: 92% ;
+
+  
+
+ 
+  
+
+}
+
+.ubicacionNewsletter__ubicacion--titulo{
+
+  font-family:'Richard Samuels';
+  font-size: 35px;
+  color: darkmagenta;
+  margin-top: 40px;
+  align-self: center;
+ 
+
+ }
+
+.ubicacion__iframe{
+
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  
+}
+
+.ubicacion__iframe iframe{
+   
+
+  position: absolute;
+  top:0;
+  left: 0;
+  left: 30px;
+  width: 100%;
+  height: 100%;
+
+}
+
+.newsletter__form{
+
+  display: flex;
+  flex-direction: column;
+  width:100% ;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto; 
+  text-align: center;
+     
+  
+  }
+ 
+
+ .newsletter__form-container{
+
+  padding: 30px;
+  display: block;
+ 
+
+}
+
+
+.newsletter__form--container--titulo{
+
+   font-family: 'Richard Samuels';
+   font-size: 35px;
+   color: darkmagenta; 
+   padding: 20px;
+
+}  
+
+.newsletter__form--container--titulo--txt {
+   
+  color: #6e0d59;
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-family: 'Fowviel';
+
+}
+
+.newsletter__form--cuerpo{
+
+  display: block;
+  align-items: center;
+  justify-content: center; 
+  
+}
+
+
+input[type=text], input[type=submit] {
+
+ 
+   width: 100%;
+   padding: 10px;
+   margin-top: 30px;      
+   box-sizing: border-box;
+   border-radius: 10px;
+   color: #3a033a;
+   font-family: 'Fowviel';
+
+}
+
+
+input[type=checkbox] {
+  
+   margin-top: 16px;  
+
+}
+
+input[type=submit] {
+
+
+  background-color: #e9cd50;
+  color: rgb(36, 1, 33);
+  border: none;
+  font-size: 20px;
+
+}
+
+.contacto__container{ 
+  margin-top: 100px;
+  font-family: 'Richard Samuels';
+  font-size: 30px;
+  color: darkmagenta;
+  padding: 20px;
+  text-align: center;
+
+}
+
+.contacto__container--link{
+  background-color: #f094f3; 
+  border: none;
+  color: rgb(88, 3, 88);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  border-radius: 20px;
+  font-family: 'Fowviel';
+  margin-top:20px;
+  margin-bottom: 100px;
+
+
+}
+
+
+
+
+
+/*MAIN CONSULTORIA*/
+
+/*PORTADA CONSULTORIA*/
+.container__port{
+ 
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  
+}
+
+
+.container__port img{
+ width: 100%;
+ max-height: 400px; 
+
+}
+
+.container__port h1{
+  
+    
+    display: flex;
+    align-items: center;
+    font-size: 60px; 
+    position: absolute; 
+    color:rgb(82, 5, 82);
+    text-shadow: -1px -1px 5px #eebdee,
+    0 0 1px rgb(203, 148, 235),
+    1px 1px 1px rgb(167, 44, 238),
+    2px 2px 1px #555,
+    3px 3px 1px #222,
+    4px 4px 1px #000;      
+ 
+ }
+
+
+.body__consultoria{
+
+    background-color:#dda9cd;
+
+}
+
+
+.container__info-consultoria--growth--info{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 50px;
+   
+
+}  
+
+.container__info--consultoria--growt--tit{
+
+  text-align: center;
+  font-size: 20px;
+  letter-spacing: 1.5px;
+  margin: 30px;
+  font-family: 'Richard Samuels';
+  color:darkmagenta ;  
+
+}
+.container__info--consultoria--growth p{
+  
+  margin: 10px; 
+  font-size: 18px;
+  font-family:'Cabin-Medium';
+  letter-spacing: 1px;
+  color: #6e0d59;
+  width: 90%;
+  text-align: center;
+
+
+}
+
+
+
+
+.container__info--consultoria--growth--imagen {
+
+   margin:30px ;
+   width:85%;
+   border-radius:10px;
+   outline: 3px solid rgb(107, 42, 107);
+   box-shadow: 5px 5px 60px rgb(44, 15, 44); 
+   height: 90%;
+
+}
+
+.container__info--consultoria---beneficios--general {
+
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr; 
+    align-items: center;
+    column-gap: 50px;
+
+
+}  
+    
+
+.container__info--consultoria--beneficios h3{
+
+   text-align: center;
+   font-size: 20px;
+   letter-spacing: 2px;
+   margin: 50px;
+   font-family: 'Richard Samuels';
+   color:darkmagenta ;  
+
+}
+
+ 
+
+
+
+.container__info--consultoria--beneficios--general--imagen{
+
+   margin:30px ;
+   width:85%;
+   border-radius:10px;
+   outline: 3px solid rgb(107, 42, 107);
+   box-shadow: 5px 5px 60px rgb(44, 15, 44); 
+   height: 80%;
+
+
+ }
+
+.container__info--onsultoria--beneficios--general--lista {
+  list-style-type:none;
+  margin-bottom: 50px;
+}
+ .container__info--consultoria-beneficios--general--lista li { 
+   
+  padding: 10px; 
+  width: 100%; 
+  font-size: 15px;
+  font-family:'Cabin-Medium';  
+  letter-spacing: 1px;
+  color: #6e0d59;
+  text-align:center;
+  
+   
+ }
+
+ 
+.container__info--consultoria-beneficios--general--lista ::before{
+  
+  content: '\272F';
+  color: #c7108ace;
+  font-size: 30px;
+  padding: 5px;
+
+}
+
+
+ .consultoria__contacto{  
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin-top:30px ;
+      
+ 
+}
+
+.consultoria__contacto--buttom {
+    font-family: 'Richard Samuels';
+    background-color: #ecea66;
+    color: darkmagenta;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+    margin: 10px 10px; 
+    outline: 3px solid darkmagenta;
+    box-shadow: 5px 5px 60px rgb(27, 4, 27); 
+
+}
+
+
+
+/*MAIN MARKETING DIGITAL- en esta pag. se usa boostrap 5*/
+
+
+.portada__mk--container{
+   
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px; 
+
+  
+}
+
+ 
+.portada__mk--container img{
+  
+   width: 100%;
+   max-height: 400px; 
+
+}
+
+.portada__mk--container h1{
+    
+  display: flex;
+ 
+  font-size: 100px; 
+  position: absolute; 
+  color:rgb(180, 6, 157);
+  text-shadow: -1px -1px 5px #131312,
+  0 0 1px rgb(208, 167, 231),
+  1px 1px 1px rgb(101, 82, 112),
+  2px 2px 1px #555,
+  3px 3px 1px #222,
+  4px 4px 1px #000;
+  text-align: center;
+  
+  
+
+}
+.portada__mk--fondo {
+    
+
+  font-size: 20px;
+  font-family:'Cabin-Medium'; 
+  text-align: center;
+  color: rgb(51, 3, 51);
+  margin-bottom: 30px;
+  
+
+
+}
+
+
+.container-fluid{
+
+  margin-top: 100px;
+  margin-bottom: 100px;  
+  align-items: center;
+}
+
+.card{
+  margin-bottom: 50px;
+  margin-left: 15px;
+  overflow: auto;
+
+}
+.card-body h5{
+  text-align: center;
+  color: darkmagenta;
+
+}
+
+.card-text{ overflow: auto
+
+
+}
+ 
+
+
+
+/*MAIN pagina CONTACTO*/
+.container__contacto{
+ 
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px; 
+
+}
+
+.container__contacto h1{
+  display: flex; 
+  font-size: 100px; 
+  position: absolute; 
+  color:rgb(245, 213, 31);
+  text-shadow: -1px -1px 5px #131312,
+  0 0 1px rgb(184, 78, 245),
+  1px 1px 1px rgb(226, 192, 247),
+  2px 2px 1px #c9a9ee,
+  3px 3px 1px #222,
+  4px 4px 1px #000;
+  text-align: center;
+
+
+}
+
+.container__contacto img{
+  width: 100%;
+  max-height: 400px; 
+
+
+}
+.titulo__form{
+  text-align: center;
+  font-family:'Richard Samuels';
+  color: darkmagenta; 
+  font-size: 50px;
+  display: block;
+}
+
+
+
+
+.container-formulario{
+  width:90%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 60px;
+  background-color:darkmagenta;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 50px;
+  margin-left: 60px;
+
+}
+.container-formulario label{
+
+  color:#fff;
+  font-family: fiwven;
+
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid darkmagenta;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.boton-enviar{
+  width: 100%;
+  background-color: #6e063a;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: block;
+
+}
+
+/*--------------------------foter-----------------------------------------*/
+
+footer{
+
+  background-color:   hsl(288, 89%, 17%);
+  color: #eebbd0;
+  padding: 40px;
+  display: flex;
+  flex-direction: row;
+  height: 150px;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  border-top: 2px;
+  width: 100%;
+ 
+
+}
+
+footer section{
+  text-align: center; 
+
+}
+
+.footer__iconos{
+
+  display: flex;
+  gap: 3px;
+ 
+ 
+}
+.footer__iconos img {
+  width:50px ;
+  height: 50px;
+}
+
+
+
+.footer__logo {
+  display: none;
+
+
+}
+
+.footer__data{
+
+ display: flex;
+ flex-direction: row;
+
+}
+
+.footer__telefono img{
+  width:60px ;
+  height: 60px;
+}
+
+
+.footer__mail img{
+  width:60px ;
+  height: 60px;
+  
+}
+
+.footer__direccion img{
+  width:60px ;
+  height: 60px;
+
+}
+
+/*Medias Queries*/
+
+
+@media (min-width: 900px) {
+
+/**header*/
+  
+
+      .nav  {  
+        display: flex;
+        flex-direction: row; 
+        align-items: center;     
+        position: relative; 
+        align-items: end; 
+        width: fit-content;
+        max-height: none;         
+        background-color: transparent;
+    }
+    
+
+    .menu li 
+    {    
+        
+        display: inline-block;
+        align-items: center;
+        margin-right: 20px;       
+       
+    }
+
+    .menu a{
+
+        padding: auto;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 25px;        
+        text-decoration: none;
+        color: #eebdee;         
+    }
+
+    .menu a:hover
+    {
+      text-shadow: 2px 2px 3px rgb(139, 15, 77), 0 0 1em rgb(238, 215, 8), 0 0 0.2em rgb(241, 205, 238);
+    }
+
+    .hamb
+    {
+        display: none;
+    }
+/**********************main - inicio ****************/
+
+.servicios__cards {
+  grid-template-columns: repeat(3, 1fr);
+} 
+
+.card{
+
+  
+  box-shadow: 0px 1px 10px rgba(0,0,0,2);
+  cursor: default;
+  transition: all 400ms ease; 
+  border-radius: 5%;
+  padding: 20px;   
+  object-fit: cover;
+  height: 600px;
+ 
+
+}
+
+
+.card__header img{
+object-fit:cover 
+
+}
+
+
+.card__link{
+  
+  font-size:20px;
+ 
+ }
+
+
+/*
+.ubicacionNewsletter{
+
+  display: flex;
+  flex-direction: row-reverse;
+  align-content: center;
+  justify-content: space-between;  
+
+}
+
+
+.ubicacion__iframe{
+
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  width:100%
+  
+}
+
+.ubicacion__iframe iframe{
+  align-self: center;  
+
+  position: absolute;
+  top:0;
+  left: 0;
+  left: 30px;
+  width: 50%;
+  height: 100%;
+
+}*/
+
+
+
+/* /////////////media q.consultoria portada////////////////////*/
+
+  .container__port h1{
+    font-size: 100px; 
+  }
+  /* ////////////////// inicio //////////////////////////*/
+
+
+ 
+
+/*//////////////////////consultoria-container//////////////*/
+
+  .container__info-consultoria--growth--info{  
+   
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+   
+}  
+.container__info--consultoria--growt--tit{
+ 
+  font-size: 50px;
+   letter-spacing: 2px;
+    margin: 50px;
+}
+  
+  
+  .container__info--consultoria--growth p{
+    font-size: 30px;
+  }
+  .container__info--consultoria---beneficios--general{
+   grid-template-columns: repeat(2, 1fr);
+  
+  }
+  .container__info--consultoria--beneficios h3{
+    font-size:50px
+
+  }
+  .container__info--consultoria-beneficios--general--lista li { 
+
+   
+    font-size: 30px;
+    text-align:left;
+    letter-spacing: 1.5px;
+
+  }
+
+  
+.consultoria__contacto--buttom {
+    padding: 10px;
+      font-size: 25px;
+  
+   margin: 20px 310px;
+} 
+
+
+/*************mq footer*******************/
+
+.footer__logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+
+
+.footer__iconos img {
+  width: 80px ;
+  height: 80px;
+}
+
+.footer__data{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+
+.footer__data a{
+  display: flex;
+  flex-direction: row;
+  color:  #eebbd0;
+  align-items: center; 
+  
+  
+}
+
+.footer__data img{
+  width: 80px ;
+  height: 80px;
+}
+
+.footer__data img{
+
+  display: flex;
+  gap: 3px;
+ 
+}
+}
