@@ -1,0 +1,754 @@
+@charset "UTF-8";
+/*Tipo*/
+/*Tamaño*/
+@font-face {
+  font-family: "Richard Samuels";
+  src: url(../assets/ttf/richard_samuels/Richard\ Samuels.otf);
+}
+@font-face {
+  font-family: "Abril Fantface";
+  src: url(../assets/ttf/abril-fatface/AbrilFatface-Regular.ttf);
+}
+@font-face {
+  font-family: "Cabin-Medium";
+  src: url(../assets/ttf/cabin/cabin\ font\ v1.5/);
+}
+@font-face {
+  font-family: "Fowviel";
+  src: url(../assets/ttf/fowviel/Fowviel.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+body {
+  background: #fbe2f9;
+  background: repeating-radial-gradient(ellipse farthest-corner at top right, #fbe2f9 2%, #ecbadd 11%, #efb9f1 20%);
+  background: -webkit-repeating-radial-gradient(ellipse farthest-corner at top right, #fbe2f9 2%, #ecbadd 11%, #efb9f1 20%);
+  background: -moz-repeating-radial-gradient(ellipse farthest-corner at top right, #fbe2f9 2%, #ecbadd 11%, #efb9f1 20%);
+  width: 100%;
+  margin: 0;
+}
+
+.sep-2 {
+  border: 0;
+  margin: 150px 80px 0;
+  height: 2px;
+  background-image: linear-gradient(to right, #c451f1, #f855cf, #f3eda0, #e6ccf0);
+}
+
+.header {
+  background-color: rgb(66, 5, 82);
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__img {
+  animation-duration: 5s;
+  animation-name: animLogo;
+  animation-iteration-count: infinite;
+}
+
+@keyframes animLogo {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotateY(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+    transform: rotateY(180deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotateY(360deg);
+  }
+}
+.header__hamb {
+  display: block;
+  padding: 40px 20px;
+  top: 30px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.header__hamb-line {
+  background: rgb(207, 163, 207);
+  display: block;
+  height: 3px;
+  position: relative;
+  width: 24px;
+  margin-right: 20px;
+}
+.header__hamb-line::before {
+  background: white;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
+  top: 5px;
+}
+.header__hamb-line::after {
+  background: white;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
+  top: -5px;
+}
+
+.header__side-menu {
+  display: none;
+}
+.header__side-menu:checked ~ nav {
+  max-height: 100%;
+}
+.header__side-menu:checked ~ .header__hamb .header__hamb-line {
+  background: transparent;
+}
+.header__side-menu:checked ~ .header__hamb .header__hamb-line::before {
+  transform: rotate(-45deg);
+  top: 0;
+}
+.header__side-menu:checked ~ .header__hamb .header__hamb-line::after {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.header__nav {
+  display: inline-block;
+  width: 100%;
+  margin: 20px;
+  font-size: 20px;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.5s ease-out;
+}
+
+.header__nav--menu a {
+  display: block;
+  padding: 20px;
+  color: rgb(230, 180, 240);
+}
+
+@media (min-width: 900px) {
+  .header__nav {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: fit-content;
+    max-height: none;
+    background-color: transparent;
+  }
+  .header__nav--menu li {
+    display: inline-block;
+    align-items: center;
+    margin-right: 20px;
+  }
+  .header__nav--menu a {
+    padding: auto;
+    font-family: "Richard Samuels";
+    font-size: 25px;
+    color: #eebdee;
+  }
+  .header__nav--menu a:hover {
+    text-shadow: 2px 2px 3px rgb(139, 15, 77), 0 0 1em rgb(238, 215, 8), 0 0 0.2em rgb(241, 205, 238);
+  }
+  .header__hamb {
+    display: none;
+  }
+}
+footer {
+  background-color: hsl(288, 89%, 17%);
+  color: #eebbd0;
+  padding: 40px;
+  display: flex;
+  flex-direction: row;
+  height: 150px;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  border-top: 2px;
+  width: 100%;
+}
+footer section {
+  text-align: center;
+}
+
+.iconos {
+  display: flex;
+}
+.iconos img {
+  width: 50px;
+  height: 50px;
+}
+
+.logo {
+  display: none;
+}
+
+.data {
+  display: flex;
+  flex-direction: row;
+}
+.data__telefono img {
+  width: 60px;
+  height: 60px;
+}
+.data__mail img {
+  width: 60px;
+  height: 60px;
+}
+.data__direccion img {
+  width: 60px;
+  height: 60px;
+}
+
+@media (min-width: 900px) {
+  .logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .iconos img {
+    width: 80px;
+    height: 80px;
+  }
+  .data {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }
+  .data a {
+    color: #eebbd0;
+  }
+  .data img {
+    display: flex;
+    width: 80px;
+    height: 80px;
+  }
+}
+.contacto__container {
+  margin-top: 100px;
+  font-family: "Richard Samuels";
+  font-size: 30px;
+  color: darkmagenta;
+  padding: 20px;
+  text-align: center;
+}
+
+.buttons {
+  margin: 30px;
+  text-align: center;
+}
+
+.btn-hover {
+  width: 200px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  margin: 20px;
+  height: 55px;
+  text-align: center;
+  border: none;
+  background-size: 300% 100%;
+  border-radius: 50px;
+  transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+.btn-hover:hover {
+  background-position: 100% 0;
+  transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+.btn-hover:focus {
+  outline: none;
+}
+.btn-hover.color {
+  background-image: linear-gradient(to right, #ed6ea0, #ec8c69, #f7186a, #FBB03B);
+  box-shadow: 0 4px 15px 0 rgba(83, 5, 102, 0.75);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.portada {
+  margin-bottom: 40px;
+  text-align: center;
+  font-size: 40px;
+}
+
+.servicios {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  padding: 0 20px;
+}
+.servicios__titulo, .ubicacionNewsletter__ubicacion--titulo {
+  font-size: 35px;
+  font-family: "Richard Samuels";
+  color: darkmagenta;
+  text-align: center;
+  padding: 70px 0;
+}
+.servicios__cards {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 50px;
+  text-align: center;
+  justify-content: center;
+  justify-items: center;
+}
+
+.cards {
+  box-shadow: -5px 8px 8px 8px #67377e;
+  cursor: default;
+  transition: all 400ms ease;
+  border-radius: 3%;
+  object-fit: cover;
+  height: 655px;
+  background-color: #f799ea;
+  padding-bottom: 50px;
+  max-width: 1200px;
+  width: 100%;
+}
+.cards__header img {
+  width: 100%;
+  height: 65vh;
+  border-radius: 5%;
+  padding: 15px;
+}
+.cards:hover {
+  box-shadow: -5px 8px 8px 8px rgb(221, 7, 157);
+  transform: translateY(-4%);
+}
+.cards__title {
+  font-family: "Richard Samuels";
+  padding-top: 10px;
+  color: #7c0647;
+  font-size: 25px;
+}
+.cards__descripcion {
+  color: #6e0d59;
+  font-size: 20px;
+  margin: 25px;
+  font-family: "Fowviel";
+}
+.cards__link {
+  color: #320136;
+  border: 3px solid purple;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0.3em 0.3em 0.3em 0 purple;
+  box-shadow: inset 0.3em 0.3em 0.3em 0 purple;
+}
+.cards__link:hover, .cards__link:focus {
+  box-shadow: 0 0 0 0 rgb(233, 197, 238), inset 6em 3.5em 0 0 purple;
+  color: aliceblue;
+}
+
+.ubicacionNewsletter {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  gap: 20px;
+  justify-items: center;
+}
+.ubicacionNewsletter__ubicacion {
+  display: flex;
+  flex-direction: column;
+  width: 92%;
+}
+.ubicacionNewsletter__ubicacion--titulo {
+  margin-top: 25px;
+  align-self: center;
+}
+
+.ubicacion__iframe {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+.ubicacion__iframe iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  left: 30px;
+  width: 100%;
+  height: 100%;
+}
+
+.newsletter__form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.newsletter__form--container {
+  padding: 30px;
+  display: block;
+}
+.newsletter__form--container--titulo {
+  font-family: "Richard Samuels";
+  font-size: 45px;
+  color: darkmagenta;
+  padding: 20px;
+}
+.newsletter__form--container--titulo--txt {
+  color: #6e0d59;
+  font-size: 20px;
+  margin-bottom: 15px;
+  font-family: "Fowviel";
+}
+.newsletter__form--cuerpo {
+  display: block;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+}
+.newsletter__form input[type=text], .newsletter__form input[type=submit] {
+  display: block;
+  padding: 10px;
+  margin-top: 30px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  color: #3a033a;
+  font-family: "Fowviel";
+  width: 100%;
+}
+.newsletter__form input[type=checkbox] {
+  margin-top: 16px;
+}
+.newsletter__form-boton {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.newsletter__form input[type=submit] {
+  min-width: 130px;
+  width: 150px;
+  height: 40px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 10px;
+  z-index: 0;
+  background-size: 120% auto;
+  background-image: linear-gradient(315deg, #de73ec 10%, #650baa 75%);
+  overflow: hidden;
+  border: 2px solid #440241;
+  color: #0d0114;
+  font-size: 15px;
+}
+.newsletter__form input[type=submit]:hover {
+  color: #f5daf3;
+  background-position: right center;
+  font-size: 20px;
+}
+.newsletter__form input[type=submit]:hover:after {
+  height: 100%;
+}
+.newsletter__form input[type=submit]:active {
+  top: 2px;
+}
+.newsletter__form span {
+  font-family: "Fowviel";
+  font-size: 20px;
+}
+
+@media (min-width: 900px) {
+  .servicios__titulo, .ubicacionNewsletter__ubicacion--titulo {
+    font-size: 45px;
+  }
+  .servicios__cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .cards {
+    box-shadow: -5px 8px 8px 8px #67377e;
+    cursor: default;
+    transition: all 400ms ease;
+    border-radius: 3%;
+    object-fit: cover;
+    height: 655px;
+    background-color: #f799ea;
+    padding-bottom: 50px;
+    max-width: 1200px;
+  }
+  .cards__header img {
+    object-fit: cover;
+  }
+  .cards__link {
+    font-size: 20px;
+  }
+  .ubicacionNewsletter__ubicacion {
+    margin-left: 35px;
+  }
+}
+.container__port, .container__contacto, .portada__mk--container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container__port img, .container__contacto img, .portada__mk--container img {
+  width: 100%;
+  max-height: 400px;
+}
+.container__port h1, .container__contacto h1, .portada__mk--container h1 {
+  display: flex;
+  align-items: center;
+  font-size: 60px;
+  position: absolute;
+  color: rgb(82, 5, 82);
+  text-shadow: -1px -1px 5px #eebdee, 0 0 1px rgb(203, 148, 235), 1px 1px 1px rgb(167, 44, 238), 2px 2px 1px #555, 3px 3px 1px #222, 4px 4px 1px #000;
+}
+
+.container__info--consultoria h2 {
+  font-size: 35px;
+  font-family: "Richard Samuels";
+  color: darkmagenta;
+  text-align: center;
+  text-align: center;
+  letter-spacing: 1.5px;
+  margin: 30px;
+}
+
+.container__info--consultoria--growth p, .container__info--consultoria--beneficios p {
+  margin: 10px;
+  font-size: 18px;
+  font-family: "Fowviel";
+  letter-spacing: 1px;
+  color: #3c0b41;
+  width: 90%;
+  text-align: center;
+}
+
+.container__info--consultoria--growth, .container__info--consultoria--beneficios {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 50px;
+}
+.container__info--consultoria--growth--imagen, .container__info--consultoria--beneficios--imagen {
+  margin: 30px;
+  width: 85%;
+  border-radius: 10px;
+  outline: 3px solid rgb(107, 42, 107);
+  box-shadow: 5px 5px 60px rgb(44, 15, 44);
+  height: 90%;
+}
+
+.container__info--consultoria--beneficios--lista {
+  margin-bottom: 50px;
+}
+.container__info--consultoria--beneficios--lista li {
+  padding: 10px;
+  width: 100%;
+  font-size: 15px;
+  font-family: "Fowviel";
+  letter-spacing: 1px;
+  color: #3c0b41;
+  text-align: center;
+}
+.container__info--consultoria--beneficios--lista li::before {
+  content: "✯";
+  color: rgba(199, 16, 138, 0.8078431373);
+  font-size: 30px;
+  padding: 5px;
+}
+
+@media (min-width: 900px) {
+  .container__info--consultoria--growth, .container__info--consultoria--beneficios {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+  .container__info--consultoria h2 {
+    font-size: 40px;
+    letter-spacing: 2px;
+    margin: 50px;
+  }
+  .container__info--consultoria--growth p, .container__info--consultoria--beneficios p {
+    font-size: 25px;
+  }
+  .container__info--consultoria--beneficios--lista li {
+    font-size: 25px;
+    text-align: left;
+    letter-spacing: 1.5px;
+  }
+}
+header a {
+  text-decoration: none;
+}
+
+.portada__mk--container h1 {
+  color: rgb(180, 6, 157);
+  text-shadow: -1px -1px 5px #131312, 0 0 1px rgb(208, 167, 231), 1px 1px 1px rgb(101, 82, 112), 2px 2px 1px #555, 3px 3px 1px #222, 4px 4px 1px #000;
+  text-align: center;
+}
+
+.portada__mk--fondo {
+  margin: 20px 20px;
+  font-size: 20px;
+  font-family: "Fowviel";
+  letter-spacing: 1px;
+  color: #3c0b41;
+  width: 90%;
+  text-align: center;
+}
+
+.col {
+  height: 700px;
+}
+
+.container-fluid {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.card {
+  margin-bottom: 50px;
+  margin-left: 15px;
+  overflow: auto;
+  box-shadow: 16px -6px 25px 3px #A94E85;
+}
+.card-body h5 {
+  text-align: center;
+  color: darkmagenta;
+  height: 80px;
+  padding-top: 15px;
+}
+.card-text {
+  text-align: center;
+  color: #3c0b41;
+  font-family: "Fowviel";
+  font-size: 20px;
+}
+
+@media (min-width: 900px) {
+  .portada__mk--fondo {
+    padding-left: 55px;
+    font-size: 30px;
+  }
+  .container-fluid {
+    margin-left: 40px;
+    margin-bottom: 20px;
+  }
+  .col {
+    display: grid;
+    gap: 20px;
+  }
+}
+.container__contacto h1 {
+  color: rgb(241, 149, 95);
+  text-shadow: -1px -1px 5px #131312, 0 0 1px rgb(64, 6, 97), 1px 1px 1px rgb(109, 8, 109), 2px 2px 1px #ddb7f7, 3px 3px 1px #615151, 4px 4px 1px #000;
+  text-align: center;
+}
+
+.titulo__form {
+  font-size: 35px;
+  font-family: "Richard Samuels";
+  color: darkmagenta;
+  text-align: center;
+  margin: 30px;
+  letter-spacing: 1.5px;
+}
+
+.container-formulario {
+  margin: 40px;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(196deg, #630F80 0%, #CA4B93 57%, #E80F65 100%);
+  border-radius: 8px;
+  padding: 15px;
+}
+.container-formulario label {
+  color: #eec5f1;
+  font-family: "Fowviel";
+  font-size: 20px;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid rgb(241, 199, 241);
+  border-radius: 6px;
+  box-sizing: border-box;
+  background: linear-gradient(196deg, rgba(231, 181, 251, 0.78) 0%, #f09ecc 57%, #FFE0EC 100%);
+}
+
+.boton-enviar {
+  display: block;
+  width: 200px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  margin: 0 auto;
+  height: 50px;
+  text-align: center;
+  border: none;
+  background-size: 300% 100%;
+  border-radius: 10px;
+  transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  background-image: linear-gradient(to right, #bd48eb, #ec8c69, #e910a8, #FBB03B);
+  box-shadow: 0 4px 15px 0 rgba(83, 5, 102, 0.75);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.boton-enviar:hover {
+  background-position: 100% 0;
+  transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+.boton-enviar:focus {
+  outline: none;
+}
+
+@media (min-width: 900px) {
+  .container-formulario {
+    margin-left: 120px;
+    margin-bottom: 120px;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,48 @@
+
+
+ 
+@font-face {
+
+    font-family: 'Richard Samuels';
+    src: url(../assets/ttf/richard_samuels/Richard\ Samuels.otf) ;
+ }
+ 
+ @font-face {
+   font-family:'Abril Fantface' ;
+   src: url(../assets/ttf/abril-fatface/AbrilFatface-Regular.ttf);
+ }
+ 
+ @font-face {
+   font-family:'Cabin-Medium' ;
+   src: url(../assets/ttf/cabin/cabin\ font\ v1.5/);
+ }
+ 
+ @font-face {
+   font-family:'Fowviel' ;
+   src: url(../assets/ttf/fowviel/Fowviel.ttf);
+ }
+ 
+
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;      
+    text-decoration: none;
+    list-style-type: none;    
+ }
+
+ body{
+    @include backbody;   
+    width: $gen-width;
+    margin: 0;
+  }
+  
+
+  .sep-2{
+
+    border: 0;
+    margin: 150px 80px 0; 
+    height: 2px; 
+    background-image: linear-gradient(to right, #c451f1, #f855cf, #f3eda0, #e6ccf0);
+
+  }

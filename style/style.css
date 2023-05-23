@@ -1,31 +1,10 @@
-* {
+/** {
    margin: 0;
    padding: 0;
    box-sizing: border-box;      
    text-decoration: none;
    list-style-type: none;    
-}
-
-@font-face {
-
-   font-family: 'Richard Samuels';
-   src: url(../assets/ttf/richard_samuels/Richard\ Samuels.otf) ;
-}
-
-@font-face {
-  font-family:'Abril Fantface' ;
-  src: url(../assets/ttf/abril-fatface/AbrilFatface-Regular.ttf);
-}
-
-@font-face {
-  font-family:'Cabin-Medium' ;
-  src: url(../assets/ttf/cabin/cabin\ font\ v1.5/);
-}
-
-@font-face {
-  font-family:'Fowviel' ;
-  src: url(../assets/ttf/fowviel/Fowviel.ttf);
-}
+}*/
 
 /*General*/
   
@@ -34,10 +13,10 @@
 
 
 /*Header */
-.header 
+/*.header 
 
-{   background-color: hsl(288, 89%, 17%);
-    box-shadow: 1px 1px 5px 0px var(--grey);   
+{   background-color: rgb(66, 5, 82);
+    box-shadow: 1px 1px 5px 0px grey;   
     top: 0;
     width: 100%;
     display: flex;   
@@ -55,7 +34,7 @@
    
  }
 
-.nav
+.header__nav
 {
     display: inline-block;
     width: 100%;
@@ -69,16 +48,10 @@
 
 }
 
-.menu a
-{
-    display: block;
-    padding: 20px;    
-    color:rgb(230, 180, 240);
-}
 
    
 
-.hamb
+.header__hamb
 {
   display: block;  
   position: absolute;
@@ -89,7 +62,7 @@
 
 }
 
-.hamb-line 
+.header__hamb-line 
 {
     background:rgb(207, 163, 207);
     display: block;
@@ -100,8 +73,8 @@
     
 }
 
-.hamb-line::before,
-.hamb-line::after
+.header__hamb-line::before,
+.header__hamb-line::after
 {
     background:white;
     content: '';
@@ -113,43 +86,49 @@
    
 }
 
-.hamb-line::before
+.header__hamb-line::before
 {
     top: 5px;
 }
 
-.hamb-line::after
+.header__hamb-line::after
 {
     top: -5px;
 }
 
-.side-menu 
+.header__side-menu 
 {
     display: none;
 }
 
-.side-menu:checked ~ nav
+.header__side-menu:checked ~ nav
 {
     max-height: 100%;
 }
 
-.side-menu:checked ~ .hamb .hamb-line 
+.header__side-menu:checked ~ .header__hamb .header__hamb-line 
 {
     background: transparent;
 }
 
-.side-menu:checked ~ .hamb .hamb-line::before 
+.header__side-menu:checked ~ .header__hamb .header__hamb-line::before 
 {
     transform: rotate(-45deg);
     top:0;
 }
 
-.side-menu:checked ~ .hamb .hamb-line::after 
+.header__side-menu:checked ~ .header__hamb .header__hamb-line::after 
 {
     transform: rotate(45deg);
     top:0;
 }
 
+.header__nav--menu a
+{
+    display: block;
+    padding: 20px;    
+    color:rgb(230, 180, 240);
+}
 
 
 
@@ -157,16 +136,16 @@
 
 /*PORTADA*/
 
-body{
+/*body{
   background-color: #fcd3e8;
-  width: 100%;
+  width: 100px; ;
   margin: 0;
-}
+}*/
 
 
 
 /*PORTADA CONSULTORIA*/
-.container__port{
+/*.container__port{
  
   display: flex; 
   justify-content: center;
@@ -197,10 +176,11 @@ body{
     3px 3px 1px #222,
     4px 4px 1px #000;      
  
- }
+ }*/
 
 
 /*PORTADA PAG CONTACTO*/
+/*
 
 .container-contacto{
 position: relative;
@@ -228,16 +208,16 @@ position: relative;
 
 /*MAIN index*/
 /*portada*/
-
+/*
 .portada{
   margin-bottom: 40px;
-  text-align: center;  
-  font-size: 40px;
+  /*text-align: center;  */
+  /*font-size: 40px;*/
  
-}
+
 
 /*servicios*/
-.servicios {
+/*.servicios {
 
   margin-top: 60px;
   padding: 0 20px;
@@ -255,7 +235,7 @@ position: relative;
 }    
  /*cards*/
 
- .servicios__cards{
+ /*.servicios__cards{
 
    max-width: 1200px;
    margin: 0 auto;
@@ -264,13 +244,13 @@ position: relative;
    gap: 50px;
    text-align: center;
    justify-content: center;
-   align-content: center;
+   /*align-content: center;*/
   
   
- }  
+ 
 
 
- .card{
+ /*.cards{
   
     box-shadow: 0px 1px 10px rgba(0,0,0,2);
     cursor: default;
@@ -281,7 +261,7 @@ position: relative;
     height: 500px;
   }
 
-.card__header img{
+.cards__header img{
 
    width: 100%;
    height: 65vh;
@@ -290,13 +270,13 @@ position: relative;
 
 }
 
-.card:hover{
+.cards:hover{
     box-shadow: 5px 5px 20px rgb(240, 133, 186);
     transform: translateY(-3%);
   
 }
 
-.card__title{
+.cards__title{
 
    font-family: 'Richard Samuels';
    padding-top: 10px;
@@ -306,7 +286,7 @@ position: relative;
 
    
   
-.card__descripcion{
+.cards__descripcion{
 
    color: #6e0d59;
    font-size: 20px;
@@ -314,7 +294,7 @@ position: relative;
    font-family: 'Fowviel';
 }  
   
-.card__link{
+.cards__link{
   color: #fff;
   background-color: #850d67;
   border: 3px solid #f0c8df;
@@ -333,7 +313,7 @@ position: relative;
 
 
 /*-----------ubicacion y newaletter----------------*/
-
+/*
 .ubicacionNewsletter{
 
   display: flex;
@@ -487,7 +467,7 @@ input[type=submit] {
   border: none;
   color: rgb(88, 3, 88);
   padding: 15px 32px;
-  text-align: center;
+  text-align: center; º1
   text-decoration: none;
   display: inline-block;
   font-size: 20px;
@@ -501,11 +481,12 @@ input[type=submit] {
 
 
 
-
+*/
 
 /*MAIN CONSULTORIA*/
-
+/*
 /*PORTADA CONSULTORIA*/
+/*
 .container__port{
  
   display: flex; 
@@ -686,11 +667,11 @@ input[type=submit] {
 }
 
 
-
+*/
 /*MAIN MARKETING DIGITAL- en esta pag. se usa boostrap 5*/
 
 
-.portada__mk--container{
+/*.portada__mk--container{
    
   display: flex; 
   justify-content: center;
@@ -762,13 +743,13 @@ input[type=submit] {
 .card-text{ overflow: auto
 
 
-}
+}*/
  
 
 
 
 /*MAIN pagina CONTACTO*/
-.container__contacto{
+/*.container__contacto{
  
   display: flex; 
   justify-content: center;
@@ -854,7 +835,7 @@ input[type=text], select, textarea {
 
 /*--------------------------foter-----------------------------------------*/
 
-footer{
+/*footer{
 
   background-color:   hsl(288, 89%, 17%);
   color: #eebbd0;
@@ -919,17 +900,18 @@ footer section{
   width:60px ;
   height: 60px;
 
-}
+}*/
 
 /*Medias Queries*/
 
 
-@media (min-width: 900px) {
+/*@media (min-width: $queries)
+ 
 
 /**header*/
   
 
-      .nav  {  
+      /*.nav  {  
         display: flex;
         flex-direction: row; 
         align-items: center;     
@@ -941,7 +923,7 @@ footer section{
     }
     
 
-    .menu li 
+    .header__nav--menu li 
     {    
         
         display: inline-block;
@@ -950,7 +932,7 @@ footer section{
        
     }
 
-    .menu a{
+    .header__nav--menu a{
 
         padding: auto;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -959,22 +941,22 @@ footer section{
         color: #eebdee;         
     }
 
-    .menu a:hover
+    .heaher__nav--menu a:hover
     {
       text-shadow: 2px 2px 3px rgb(139, 15, 77), 0 0 1em rgb(238, 215, 8), 0 0 0.2em rgb(241, 205, 238);
     }
 
-    .hamb
+    .header__hamb
     {
         display: none;
     }
 /**********************main - inicio ****************/
 
-.servicios__cards {
+/*.servicios__cards {
   grid-template-columns: repeat(3, 1fr);
 } 
 
-.card{
+.cards{
 
   
   box-shadow: 0px 1px 10px rgba(0,0,0,2);
@@ -989,57 +971,24 @@ footer section{
 }
 
 
-.card__header img{
+.cards__header img{
 object-fit:cover 
 
 }
 
 
-.card__link{
+.cards__link{
   
   font-size:20px;
  
  }
 
 
-/*
-.ubicacionNewsletter{
-
-  display: flex;
-  flex-direction: row-reverse;
-  align-content: center;
-  justify-content: space-between;  
-
-}
-
-
-.ubicacion__iframe{
-
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-  width:100%
-  
-}
-
-.ubicacion__iframe iframe{
-  align-self: center;  
-
-  position: absolute;
-  top:0;
-  left: 0;
-  left: 30px;
-  width: 50%;
-  height: 100%;
-
-}*/
-
 
 
 /* /////////////media q.consultoria portada////////////////////*/
 
-  .container__port h1{
+  /*.container__port h1{
     font-size: 100px; 
   }
   /* ////////////////// inicio //////////////////////////*/
@@ -1049,7 +998,7 @@ object-fit:cover
 
 /*//////////////////////consultoria-container//////////////*/
 
-  .container__info-consultoria--growth--info{  
+ /* .container__info-consultoria--growth--info{  
    
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
@@ -1093,7 +1042,7 @@ object-fit:cover
 
 
 /*************mq footer*******************/
-
+/*
 .footer__logo {
   display: flex;
   flex-direction: column;

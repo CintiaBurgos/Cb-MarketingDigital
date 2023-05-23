@@ -1,0 +1,15 @@
+{
+  "name": "cb",
+  "version": "1.0.0",
+  "description": "Este es un proyecto del curso de **Desarrollo Web** basado en HTML y CSS",
+  "main": "index.js",
+  "scripts": {
+    "build-sass": "sass ./sass/main.scss ./nuevacss/main.css -w"
+    
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.62.1"
+  }
+}

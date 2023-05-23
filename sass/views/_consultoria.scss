@@ -1,0 +1,134 @@
+.container__port {
+	display: flex;
+	justify-content: center;
+	align-items: $textali;
+	img {
+		width: $gen-width;
+		max-height: 400px;
+	}
+	h1 {
+		display: flex;
+		align-items: $textali;
+		font-size: 60px;
+		position: absolute;
+		color: rgb(82, 5, 82);
+		text-shadow: -1px -1px 5px #eebdee,
+        0 0 1px rgb(203, 148, 235),
+        1px 1px 1px rgb(167, 44, 238),
+        2px 2px 1px #555,
+        3px 3px 1px #222,
+        4px 4px 1px #000;
+	}
+}
+
+.container__info--consultoria h2{
+    @include titulo;
+    text-align: $textali;
+    letter-spacing: 1.5px;
+    margin: 30px;
+  
+  }
+
+  .container__info--consultoria--growth p {
+	margin: 10px;
+	font-size: 18px;
+	font-family: $fuentenews;
+	letter-spacing: 1px;
+	color:$colorparrafo;
+	width: 90%;
+	text-align: center;
+}
+
+
+.container__info--consultoria--growth{
+    max-width: 1200px;
+    margin: 0 auto;
+    @include grid;
+    
+    
+    &--imagen{
+        margin: 30px ;
+	   width: 85%;
+	   border-radius: 10px;
+	   outline: 3px solid rgb(107, 42, 107);
+	   box-shadow: 5px 5px 60px rgb(44, 15, 44);
+	   height: 90%;
+    }
+}
+
+  
+
+//////fortalezas///////
+
+.container__info--consultoria--beneficios{
+	@extend .container__info--consultoria--growth;
+
+    &--imagen{
+        @extend .container__info--consultoria--growth--imagen;
+   
+
+    }
+   
+}
+
+ 
+
+.container__info--consultoria--beneficios--lista{
+	
+	margin-bottom: 50px;
+     
+    li {
+        padding: 10px;
+        width: 100%;
+        font-size: 15px;
+        font-family: $fuentenews;
+        letter-spacing: 1px;
+        color:$colorparrafo;
+        text-align: center;
+    
+         &::before{
+        content: '\272F' ;
+	    color: #c7108ace;
+	    font-size: 30px;
+	    padding: 5px;}
+
+    }
+
+}
+ 
+
+/////medias queries////////////
+ 
+@media (min-width: $queries) {
+
+.container__info--consultoria--growth{  
+   
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+   
+}  
+.container__info--consultoria h2{
+ 
+   font-size: 40px;
+   letter-spacing: 2px;
+    margin: 50px;
+}
+  
+  
+  .container__info--consultoria--growth p{
+    font-size: 25px;
+  }
+  .container__info--consultoria--beneficios{
+    @extend .container__info--consultoria--growth;
+   
+  
+  }
+ 
+  .container__info--consultoria--beneficios--lista li { 
+   
+    font-size: 25px;
+    text-align:left;
+    letter-spacing: 1.5px;
+
+  }
+}

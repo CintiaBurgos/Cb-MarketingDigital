@@ -1,0 +1,91 @@
+.container__contacto{
+    @extend .container__port;
+    h1{
+        color:rgb(241, 149, 95);
+        text-shadow: -1px -1px 5px #131312,
+        0 0 1px rgb(64, 6, 97),
+        1px 1px 1px rgb(109, 8, 109),
+        2px 2px 1px #ddb7f7,
+        3px 3px 1px #615151,
+        4px 4px 1px #000;
+        text-align: center;
+        
+    }   
+  }
+ 
+  .titulo__form{
+    @include titulo;
+    margin: 30px;
+    letter-spacing: 1.5px;   
+  }
+      
+  .container-formulario{
+    margin: 40px;      
+    width:80%;
+    @include display;   
+    background: linear-gradient(196deg, #630F80 0%, #CA4B93 57%, #E80F65 100%);
+    border-radius: 8px;
+    padding: 15px;   
+        label{  
+        color:#eec5f1;
+        font-family: $fuentenews;
+        font-size: 20px;    
+      }  
+    
+  }
+  
+  input[type=text], select, textarea {
+    width: $gen-width;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid rgb(241, 199, 241);
+    border-radius: 6px;
+    box-sizing: border-box;
+    background: linear-gradient(196deg, rgba(231, 181, 251, 0.78) 0%, #f09ecc 57%, #FFE0EC 100%);;
+  }
+  
+  .boton-enviar{
+    display: block; 
+    width: 200px;
+	font-size: 15px;
+	font-weight: 600;
+	color: #fff;
+	cursor: pointer;
+	margin: 0 auto;
+	height: 50px;
+	text-align: center;
+	border: none;
+	background-size: 300% 100%;
+	border-radius: 10px;
+	transition: all .4s ease-in-out;
+	-o-transition: all .4s ease-in-out;
+	-webkit-transition: all .4s ease-in-out;
+	transition: all .4s ease-in-out;
+    background-image: linear-gradient(to right, #bd48eb, #ec8c69, #e910a8 , #FBB03B);
+		box-shadow: 0 4px 15px 0 rgba(83, 5, 102, 0.75);
+		font-family: Arial, Helvetica, sans-serif;
+	&:hover {
+		background-position: 100% 0;
+		transition: all .4s ease-in-out;
+		-o-transition: all .4s ease-in-out;
+		-webkit-transition: all .4s ease-in-out;
+		transition: all .4s ease-in-out;
+	}
+	&:focus {
+		outline: none;
+
+    }
+
+}
+   
+  
+  @media (min-width: $queries) {
+
+    .container-formulario{
+        margin-left: 120px;
+        margin-bottom: 120px;
+
+    }
+
+  }
