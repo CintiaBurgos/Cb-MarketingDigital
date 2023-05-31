@@ -1,145 +1,130 @@
 .header {
-
-	background-color: $color-header;	
-	top: 0;
-	width:$gen-width;  
-	display: flex;
-	align-items: center;
-	justify-content: space-between;  
-
+  background-color: $color-header;
+  top: 0;
+  width: $gen-width;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.header__img{
-	 animation-duration: 5s;
-     animation-name: animLogo;
-     animation-iteration-count: infinite;
-   }
- @keyframes animLogo{
-     from {
-         -webkit-transform: rotate(0deg);
-         transform: rotateY(0deg);
-     }
-     50%{
-         -webkit-transform: rotate(180deg);
-         transform: rotateY(180deg);
-     } to {
-         -webkit-transform: rotate(360deg);
-         transform: rotateY(360deg);
-         }
- }
-
-
-
+.header__img {
+  animation-duration: 5s;
+  animation-name: animLogo;
+  animation-iteration-count: infinite;
+}
+@keyframes animLogo {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotateY(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+    transform: rotateY(180deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotateY(360deg);
+  }
+}
 
 .header__hamb {
-	display: block;	    
-	padding: 40px 20px;
-	top: 30px;
-	right: 20px;
-	cursor: pointer;
+  display: block;
+  padding: 40px 20px;
+  top: 30px;
+  right: 20px;
+  cursor: pointer;
 }
 .header__hamb-line {
-	background: $background-ham;
-	display: block;
-	height: 3px;
-	position: relative;
-	width: 24px;
-	margin-right: 20px;
-	&::before {
-        @include header-be-af;		
-		top: 5px;
-	}
-	&::after {
-        @include header-be-af;		
-		top: -5px;
-	}
+  background: $background-ham;
+  display: block;
+  height: 3px;
+  position: relative;
+  width: 24px;
+  margin-right: 20px;
+  &::before {
+    @include header-be-af;
+    top: 5px;
+  }
+  &::after {
+    @include header-be-af;
+    top: -5px;
+  }
 }
 .header__side-menu {
-	display: none;
-	&:checked {
-		~ {
-			nav {
-				max-height :100%;
-			}
+  display: none;
+  &:checked {
+    ~ {
+      nav {
+        max-height: 100%;
+      }
 
-			.header__hamb {               
-				.header__hamb-line {
-					background: transparent;
-					&::before {
-						transform: rotate(-45deg);
-						top: 0;
-					}
-					&::after {
-						transform: rotate(45deg);
-						top: 0;
-					}
-				}
-			}
-		}
-	}
+      .header__hamb {
+        .header__hamb-line {
+          background: transparent;
+          &::before {
+            transform: rotate(-45deg);
+            top: 0;
+          }
+          &::after {
+            transform: rotate(45deg);
+            top: 0;
+          }
+        }
+      }
+    }
+  }
 }
 
 .header__nav {
-	display: inline-block;
-	width: $gen-width;
-	margin: 20px;
-	font-size: 20px;
-	overflow: hidden;
-	max-height: 0;
-	transition: max-height .5s ease-out;
-
-               }
-
-
-.header__nav--menu {
-	a {
-		display: block;
-		padding: 20px;
-		color: $color-menu;
-	}
+  display: inline-block;
+  width: $gen-width;
+  margin: 20px;
+  font-size: 20px;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.5s ease-out;
 }
 
+.header__nav--menu {
+  a {
+    display: block;
+    padding: 20px;
+    color: $color-menu;
+  }
+}
 
 ///////////////////media queries header//////////////////////////////////////
 
-@media (min-width: $queries){  
-
-    .header__nav  {  
-      display: flex;
-      flex-direction: row;       
-      position: relative;       
-      width: fit-content;
-      max-height: none;      
-      background-color: transparent;
-  }
-  
-
-  .header__nav--menu li 
-  {    
-      
-      display: inline-block;
-      align-items: center;
-      margin-right: 20px;       
-     
+@media (min-width: $queries) {
+  .header__nav {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: fit-content;
+    max-height: none;
+    background-color: transparent;
   }
 
-  .header__nav--menu a{
+  .header__nav--menu li {
+    display: inline-block;
+    align-items: center;
+    margin-right: 20px;
+  }
 
-      padding: auto;
-      font-family: $fuente;
-      font-size: 25px;      
-      
-      color: #eebdee;   
-      
-             &:hover{
-                text-shadow: 2px 2px 3px rgb(139, 15, 77), 0 0 1em rgb(238, 215, 8), 0 0 0.2em rgb(241, 205, 238);
+  .header__nav--menu a {
+    padding: auto;
+    font-family: $fuente;
+    font-size: 25px;
 
-             }
-  }  
+    color: #eebdee;
 
-  .header__hamb
-  {
-      display: none;
+    &:hover {
+      text-shadow: 2px 2px 3px rgb(139, 15, 77), 0 0 1em rgb(238, 215, 8),
+        0 0 0.2em rgb(241, 205, 238);
+    }
+  }
+
+  .header__hamb {
+    display: none;
   }
 }
-

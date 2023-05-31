@@ -1,42 +1,32 @@
 // colores //
 
-
-
 $color-header: rgb(66, 5, 82);
 $color-menu: rgb(230, 180, 240);
-$background-ham:rgb(207, 163, 207);
-$colortitulo:darkmagenta;
+$background-ham: rgb(207, 163, 207);
+$colortitulo: darkmagenta;
 
 $cardsbttcolor: purple;
 
-$colorparrafo:#3c0b41;
+$colorparrafo: #3c0b41;
 
 //fondo body//
-$bkgbody:#fbe2f9;
-$gradbody1:#ecbadd;
-$gradbody2:#efb9f1;
-
-
-
+$bkgbody: #fbe2f9;
+$gradbody1: #ecbadd;
+$gradbody2: #efb9f1;
 
 //fuentes //
 /*Tipo*/
-$fuente:'Richard Samuels'; //fuente header y h1//
-$fuentenews:'Fowviel';
+$fuente: "Richard Samuels"; //fuente header y h1//
+$fuentenews: "Fowviel";
 /*Tamaño*/
-
-
-
-
 
 //width medida//
 
-$gen-width:100%;
+$gen-width: 100%;
 
 //alineacion texto//
 
 $textali: center;
-
 
 //medias queries//
 
@@ -47,107 +37,100 @@ $direccion: row;
 
 //Mixins//
 
-
 ///header///
 
-@mixin header-be-af{
-
-    background: white;
-		content: '';
-		display: block;
-		height: 100%;
-		position: absolute;
-		transition: all .2s ease-out;
-		width: 100%;
-		
+@mixin header-be-af {
+  background: white;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
 }
 ///footer////
 
 @mixin footer-data-img {
-    width:60px ;
-    height: 60px;
-
+  width: 60px;
+  height: 60px;
 }
 
-
-@mixin backbody{
-    background: $bkgbody;
-    background: repeating-radial-gradient(ellipse farthest-corner at top right, $bkgbody 2%, $gradbody1 11%, $gradbody2 20%);
-    background: -webkit-repeating-radial-gradient(ellipse farthest-corner at top right, $bkgbody 2%, $gradbody1  11%, $gradbody2 20%);
-    background: -moz-repeating-radial-gradient(ellipse farthest-corner at top right, $bkgbody 2%, $gradbody1  11%, $gradbody2 20%);
-    
+@mixin backbody {
+  background: $bkgbody;
+  background: repeating-radial-gradient(
+    ellipse farthest-corner at top right,
+    $bkgbody 2%,
+    $gradbody1 11%,
+    $gradbody2 20%
+  );
+  background: -webkit-repeating-radial-gradient(
+    ellipse farthest-corner at top right,
+    $bkgbody 2%,
+    $gradbody1 11%,
+    $gradbody2 20%
+  );
+  background: -moz-repeating-radial-gradient(
+    ellipse farthest-corner at top right,
+    $bkgbody 2%,
+    $gradbody1 11%,
+    $gradbody2 20%
+  );
 }
-@mixin alineamiento{
-            text-align: $textali;
-            justify-content: center;
-          
-}
-
-@mixin titulo{
-
-    font-size: 35px;
-    font-family: $fuente;
-    color: $colortitulo;
-    text-align: $textali;
-   
-
-
-}
-@mixin cards{
-    box-shadow:  -5px 8px 8px 8px #67377e;
-	cursor: default;
-	transition: all 400ms ease;
-	border-radius: 3%;	
-	object-fit: cover;    
-	height:655px;
-    background-color: #f799ea;
-    padding-bottom: 50px;
-    max-width: 1200px;
-
-
+@mixin alineamiento {
+  text-align: $textali;
+  justify-content: center;
 }
 
+@mixin titulo {
+  font-size: 35px;
+  font-family: $fuente;
+  color: $colortitulo;
+  text-align: $textali;
+}
+@mixin cards {
+  box-shadow: -5px 8px 8px 8px #67377e;
+  cursor: default;
+  transition: all 400ms ease;
+  border-radius: 3%;
+  object-fit: cover;
+  height: 655px;
+  background-color: #f799ea;
+  padding-bottom: 50px;
+  max-width: 1200px;
+}
 
 @mixin display {
-    display: flex;
-    flex-direction: column;
-   
+  display: flex;
+  flex-direction: column;
 }
 @mixin mi-mixin-box-shadow($offset, $blur, $color, $inset: false) {
-    $shadow: $offset $offset $blur 0 $color;
-    @if $inset {
-      $shadow: inset $shadow;
-    }
-    box-shadow: $shadow;
+  $shadow: $offset $offset $blur 0 $color;
+  @if $inset {
+    $shadow: inset $shadow;
   }
-  
-  @mixin mi-mixin-hover-focus {
-    &:hover,
-    &:focus {
-      box-shadow: 0 0 0 0 rgb(233, 197, 238), inset 6em 3.5em 0 0 purple;
-      color: aliceblue;
-    }
-  }
-
-@mixin h1{
-        display: flex;
-		align-items: $textali;
-		font-size: 60px;
-		position: absolute;
-		color: rgb(82, 5, 82);
-		text-shadow: -1px -1px 5px #eebdee,
-        0 0 1px rgb(203, 148, 235),
-        1px 1px 1px rgb(167, 44, 238),
-        2px 2px 1px #555,
-        3px 3px 1px #222,
-        4px 4px 1px #000;
-
-
+  box-shadow: $shadow;
 }
-@mixin grid{
-    display: grid;
-	grid-template-columns: 1fr;
-    column-gap: 50px;
-   
 
+@mixin mi-mixin-hover-focus {
+  &:hover,
+  &:focus {
+    box-shadow: 0 0 0 0 rgb(233, 197, 238), inset 6em 3.5em 0 0 purple;
+    color: aliceblue;
+  }
+}
+
+@mixin h1 {
+  display: flex;
+  align-items: $textali;
+  font-size: 60px;
+  position: absolute;
+  color: rgb(82, 5, 82);
+  text-shadow: -1px -1px 5px #eebdee, 0 0 1px rgb(203, 148, 235),
+    1px 1px 1px rgb(167, 44, 238), 2px 2px 1px #555, 3px 3px 1px #222,
+    4px 4px 1px #000;
+}
+@mixin grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 50px;
 }
