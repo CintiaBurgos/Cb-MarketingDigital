@@ -4,7 +4,7 @@
   "description": "Este es un proyecto del curso de **Desarrollo Web** basado en HTML y CSS",
   "main": "index.js",
   "scripts": {
-    "build-sass": "sass ./sass/main.scss ./nuevacss/main.css -w"
+    "build-sass": "sass ./sass/main.scss ./style/main.css -w"
     
   },
   "author": "",

@@ -41,10 +41,10 @@ body {
   background-image: linear-gradient(to right, #c451f1, #f855cf, #f3eda0, #e6ccf0);
 }
 
-.header {
-  background-color: rgb(66, 5, 82);
+/*.header {
+  background-color: $color-header;
   top: 0;
-  width: 100%;
+  width: $gen-width;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -55,7 +55,6 @@ body {
   animation-name: animLogo;
   animation-iteration-count: infinite;
 }
-
 @keyframes animLogo {
   from {
     -webkit-transform: rotate(0deg);
@@ -70,6 +69,7 @@ body {
     transform: rotateY(360deg);
   }
 }
+
 .header__hamb {
   display: block;
   padding: 40px 20px;
@@ -77,57 +77,50 @@ body {
   right: 20px;
   cursor: pointer;
 }
-
 .header__hamb-line {
-  background: rgb(207, 163, 207);
+  background: $background-ham;
   display: block;
   height: 3px;
   position: relative;
   width: 24px;
   margin-right: 20px;
+  &::before {
+    @include header-be-af;
+    top: 5px;
+  }
+  &::after {
+    @include header-be-af;
+    top: -5px;
+  }
 }
-.header__hamb-line::before {
-  background: white;
-  content: "";
-  display: block;
-  height: 100%;
-  position: absolute;
-  transition: all 0.2s ease-out;
-  width: 100%;
-  top: 5px;
-}
-.header__hamb-line::after {
-  background: white;
-  content: "";
-  display: block;
-  height: 100%;
-  position: absolute;
-  transition: all 0.2s ease-out;
-  width: 100%;
-  top: -5px;
-}
-
 .header__side-menu {
   display: none;
-}
-.header__side-menu:checked ~ nav {
-  max-height: 100%;
-}
-.header__side-menu:checked ~ .header__hamb .header__hamb-line {
-  background: transparent;
-}
-.header__side-menu:checked ~ .header__hamb .header__hamb-line::before {
-  transform: rotate(-45deg);
-  top: 0;
-}
-.header__side-menu:checked ~ .header__hamb .header__hamb-line::after {
-  transform: rotate(45deg);
-  top: 0;
+  &:checked {
+    ~ {
+      nav {
+        max-height: 100%;
+      }
+
+      .header__hamb {
+        .header__hamb-line {
+          background: transparent;
+          &::before {
+            transform: rotate(-45deg);
+            top: 0;
+          }
+          &::after {
+            transform: rotate(45deg);
+            top: 0;
+          }
+        }
+      }
+    }
+  }
 }
 
 .header__nav {
   display: inline-block;
-  width: 100%;
+  width: $gen-width;
   margin: 20px;
   font-size: 20px;
   overflow: hidden;
@@ -135,13 +128,17 @@ body {
   transition: max-height 0.5s ease-out;
 }
 
-.header__nav--menu a {
-  display: block;
-  padding: 20px;
-  color: rgb(230, 180, 240);
+.header__nav--menu {
+  a {
+    display: block;
+    padding: 20px;
+    color: $color-menu;
+  }
 }
 
-@media (min-width: 900px) {
+///////////////////media queries header//////////////////////////////////////
+
+@media (min-width: $queries) {
   .header__nav {
     display: flex;
     flex-direction: row;
@@ -150,22 +147,119 @@ body {
     max-height: none;
     background-color: transparent;
   }
+
   .header__nav--menu li {
     display: inline-block;
     align-items: center;
     margin-right: 20px;
   }
+
   .header__nav--menu a {
     padding: auto;
-    font-family: "Richard Samuels";
+    font-family: $fuente;
     font-size: 25px;
+
     color: #eebdee;
+
+    &:hover {
+      text-shadow: 2px 2px 3px rgb(139, 15, 77), 0 0 1em rgb(238, 215, 8),
+        0 0 0.2em rgb(241, 205, 238);
+    }
   }
-  .header__nav--menu a:hover {
-    text-shadow: 2px 2px 3px rgb(139, 15, 77), 0 0 1em rgb(238, 215, 8), 0 0 0.2em rgb(241, 205, 238);
-  }
+
   .header__hamb {
     display: none;
+  }
+}
+*/
+.navbar {
+  background-color: rgb(66, 5, 82);
+  padding: 20px 12px;
+  height: 125px;
+  position: relative;
+}
+.navbar .fi-br-cross {
+  display: none;
+}
+.navbar__logo--img {
+  position: absolute;
+  bottom: 0.5px;
+  animation-duration: 5s;
+  animation-name: animLogo;
+  animation-iteration-count: infinite;
+}
+.navbar__checkbox {
+  /*@include nav;*/
+  opacity: 0;
+}
+.navbar__icons {
+  /*@include nav;*/
+  pointer-events: none;
+  font-size: 30px;
+  color: rgb(207, 163, 207);
+}
+.navbar__links {
+  width: 400px;
+  position: absolute;
+  top: 100px;
+  right: 0px;
+  color: rgb(230, 180, 240);
+  font-family: "Richard Samuels";
+  font-size: 25px;
+  display: none;
+}
+.navbar__links li a {
+  display: block;
+  padding: 10px 12px;
+  background-color: rgb(66, 5, 82);
+  color: rgb(230, 180, 240);
+}
+.navbar__links li a:hover {
+  text-shadow: 2px 2px 3px rgb(139, 15, 77), 0 0 1em rgb(238, 215, 8), 0 0 0.2em rgb(241, 205, 238);
+}
+@keyframes animLogo {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotateY(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+    transform: rotateY(180deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotateY(360deg);
+  }
+}
+
+.navbar__checkbox:checked ~ .fi-br-menu-burger {
+  display: none;
+}
+
+.navbar__checkbox:checked ~ .fi-br-cross {
+  display: block;
+}
+
+.navbar__checkbox:checked ~ .navbar__links {
+  display: block;
+}
+
+@media (min-width: 900px) {
+  .navbar__checkbox, .fi-br-menu-burger, .fi-br-cross {
+    display: none;
+  }
+  .navbar {
+    display: flex;
+  }
+  .navbar__links {
+    display: flex;
+    flex-direction: row;
+    width: unset;
+    position: absolute;
+    align-self: center;
+    margin-top: 45px;
+    top: -0.5px;
+    right: 40px;
   }
 }
 footer {
@@ -282,7 +376,7 @@ footer section {
   outline: none;
 }
 .btn-hover.color {
-  background-image: linear-gradient(to right, #ed6ea0, #ec8c69, #f7186a, #FBB03B);
+  background-image: linear-gradient(to right, #ed6ea0, #ec8c69, #f7186a, #fbb03b);
   box-shadow: 0 4px 15px 0 rgba(83, 5, 102, 0.75);
   font-family: Arial, Helvetica, sans-serif;
 }
