@@ -7,6 +7,8 @@
     Atrae a tu audiencia objetivo y maximiza tus resultados con campañas en redes sociales y Google Ads. Obtén el impulso necesario para destacarte en la era digital con nuestro equipo de expertos.">
     <meta name="keywords" content="publicidad orgánica, publicidad paga, redes sociales, Facebook, Instagram, TikTok, Twitter, WhatsApp, Google Ads, anuncios">
     <link rel="shortcut icon" href="../assets/Favicon/cbLogo.png" type="image/x-icon"/> 
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href= "../style/main.css"> 
     <title>Marketing Digital - Redes Sociales</title>
@@ -15,18 +17,19 @@
      
   <header class="header">    
            
-    <a href="../index.html" class="logo"><img class="header__img" src="../assets/Favicon/cbLogo.png" width="150px" height="150px" alt="Logo"></a>
-    <input type="checkbox" id="side-menu" class="header__side-menu"/>
-    <label for="side-menu" class="header__hamb"><span class="header__hamb-line"></span></label>
-    <nav class="header__nav">
-        <ul class="header__nav--menu">
+    <nav class="navbar">
+      <a href="../index.html" class="navbar__logo"><img class="navbar__logo--img" src="../assets/Favicon/cbLogo.png" width="125px" height="125px" alt="Logo"></a>
+      <input class=" navbar__checkbox" type="checkbox"/>
+      <i class="navbar__icons fi fi-br-menu-burger"></i>
+      <i class="navbar__icons fi fi-br-cross"></i> 
+
+      <ul class="navbar__links">        
             <li><a href="../index.html">Inicio</a></li>
             <li><a href="../pages/consultoria.html">Consultoria</a></li>
             <li><a href="../pages/marketing-digital.html">Marketing digital</a></li>
             <li><a href="../pages/contacto.html">Contacto</a></li>
         </ul>
     </nav>
-</div>
 </header>
 
     <main>
@@ -45,7 +48,7 @@
             
         </section> 
         <div class="container-fluid" >
-        <div class="row row-cols-1 row-cols-lg-3 g-3">
+        <div class="col-sm-6 col-md-4 col-lg-3">
             <div class="col">
               <div class="card" style="width: 23rem" >             
                 <img src="../assets/imagenes/face-cards.webp" class=".img-fluid" alt="Imagen Facebook" class="card-img-top" alt="...">
@@ -141,47 +144,50 @@
     </main>
   
 
-    <footer>
-      <section class="iconos">
-      <a href="https://www.facebook.com/profile.php?id=100080755952330" class="footer__icon">
-          <img src="../assets/imagenes/logo-fb.webp"   alt= "facebook" />  
-
-      </a>
-      <a href="https://www.instagram.com/cintiaburgos05/" class="footer__icon">
-        <img src="../assets/imagenes/logo-ins.webp"   alt= "Inatagram" />  </a>
-
-      <a href="https://www.linkedin.com/feed/" class="footer__icon">
-       <img src="../assets/imagenes/logo-link.webp"    alt= "Linkedin"></a>
-    </section>
-    <div class="logo">
-      <a href="../index.html">
-      <img src="../assets/Favicon/cbLogo.png" width="110px" height="110px"  alt="logo Cb">
-      </a>
-      <h4>&copy; CB Marketing Digital</h4>
-      <p>2021 - Todos los derechos reservados.</p>
-    </div>
- 
-    <section class="data ">
-    
-      <div class="data__telefono">
-        <a href="https://wa.me/542494310500">
-        <img src="../assets/imagenes/tel.webp" width="40px" height="40px"  alt="icono telefono">
-          </a>
+   
+    <footer class="footer">
+      <div class="footer__header">
+          <div class="footer__header--logo">
+            <img src="../assets/Favicon/cbLogo.png" width="90px" height="90px"  alt="logo Cb">
+              <p class="footer__header--logo--logotipo">CB Marketing Digital</p>
+          </div>
+          <div class="footer__header--redes">
+              <span class="footer__header--redes--fb"><a href="https://www.facebook.com/profile.php?id=100080755952330" class="container__iconos--link"><i class="fa-brands fa-facebook fa-flip" style="color: #04033f;"></i></a></span>
+              <span class="footer__header--redes--in"><a href="https://www.instagram.com/cintiaburgos05/" class="container__iconos--link"><i class="fa-brands fa-instagram fa-flip"></i></i></a></span>
+              <span class="footer__header--redes--li"><a href="https://www.linkedin.com/feed/" class="container__iconos--link"><i class="fa-brands fa-linkedin-in fa-flip"></i></a></span>
+              
+          </div>
       </div>
-
-      <div class="data__mail">
-        <a href="mailto:cintiaailinburgos@gmail.com">
-      <img src="../assets/imagenes/mail.webp" width="40px" height="40px"  alt="icono mail">
-    </a>
-    </div>
-    <div class="data__direccion">
-      <a href="https://goo.gl/maps/ZZSUWt8pZPqZt4BR9">
-        <img src="../assets/imagenes/direccion.webp" width="40px" height="40px"  alt="icono direccion">      
-      </a>
-    
+      <hr>
+      <div class="footer__section">
+          <div>
+              <h3>Menu</h3>
+              <a href="../index.html">Inicio</a>
+              <a href="./consultoria.html">Consultoria</a>
+              <a href="./marketing-digital.html">Marketing Digital</a>
+              <a href="./contacto.html">Contacto</a>
+          </div>
+          <div>
+              <h3>Contacto</h3>
+              <a href="https://wa.me/542494310500"><i class="fa-solid fa-phone-volume"></i> </a>
+              <a href="mailto:cintiaailinburgos@gmail.com"><i class="fa-regular fa-at"></i> </a> 
+              <a href="https://goo.gl/maps/ZZSUWt8pZPqZt4BR9"><i class="fa-sharp fa-solid fa-street-view"> </i> </a>
+          </div>
+         
+          <div>
+              <h3>Suscribete</h3>
+              <form action="">
+                  <input type="text" placeholder="Email"/>
+                  <button type="submit">Suscribete</button>
+              </form>
+          </div>
       </div>
-    </section>
-  </footer> 
+      <div class="footer__derechos">
+          <p>&copy CB Marketing Digital Todos los derechos reservados</p>
+         
+      </div>
+  
+</footer>
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>

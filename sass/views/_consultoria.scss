@@ -1,4 +1,5 @@
 .container__port {
+  
 	display: flex;
 	justify-content: center;
 	align-items: $textali;
@@ -9,7 +10,7 @@
 	h1 {
 		display: flex;
 		align-items: $textali;
-		font-size: 60px;
+		font-size: 50px;
 		position: absolute;
 		color: rgb(82, 5, 82);
 		text-shadow: -1px -1px 5px #eebdee,
@@ -42,8 +43,9 @@
 
 .container__info--consultoria--growth{
     max-width: 1200px;
-    margin: 0 auto;
+    margin:auto;
     @include grid;
+    place-items: center;
     
     
     &--imagen{

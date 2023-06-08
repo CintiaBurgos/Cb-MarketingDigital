@@ -1,9 +1,12 @@
 @charset "UTF-8";
 /*Tipo*/
-/*Tamaño*/
 @font-face {
   font-family: "Richard Samuels";
   src: url(../assets/ttf/richard_samuels/Richard\ Samuels.otf);
+}
+@font-face {
+  font-family: "Agenor Neue";
+  src: url(../assets/ttf/agenor_neue/AgenorNeue-Regular.otf);
 }
 @font-face {
   font-family: "Abril Fantface";
@@ -16,6 +19,10 @@
 @font-face {
   font-family: "Fowviel";
   src: url(../assets/ttf/fowviel/Fowviel.ttf);
+}
+@font-face {
+  font-family: "Aristotelica";
+  src: url(../assets/ttf/aristotelica/Aristotelica\ Display\ DemiBold\ Trial.ttf);
 }
 * {
   margin: 0;
@@ -175,13 +182,15 @@ body {
 .navbar {
   background-color: rgb(66, 5, 82);
   padding: 20px 12px;
-  height: 125px;
+  height: 120px;
   position: relative;
 }
 .navbar .fi-br-cross {
   display: none;
 }
 .navbar__logo--img {
+  height: 120px;
+  width: 120px;
   position: absolute;
   bottom: 0.5px;
   animation-duration: 5s;
@@ -189,32 +198,42 @@ body {
   animation-iteration-count: infinite;
 }
 .navbar__checkbox {
-  /*@include nav;*/
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  cursor: pointer;
   opacity: 0;
 }
 .navbar__icons {
-  /*@include nav;*/
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  cursor: pointer;
   pointer-events: none;
-  font-size: 30px;
+  font-size: 24px;
   color: rgb(207, 163, 207);
 }
 .navbar__links {
-  width: 400px;
+  width: 100%;
   position: absolute;
-  top: 100px;
+  top: -250px;
+  z-index: -1;
   right: 0px;
   color: rgb(230, 180, 240);
-  font-family: "Richard Samuels";
-  font-size: 25px;
-  display: none;
+  font-family: "Aristotelica";
+  font-size: 20px;
 }
 .navbar__links li a {
   display: block;
-  padding: 10px 12px;
+  padding: 10px 15px;
   background-color: rgb(66, 5, 82);
   color: rgb(230, 180, 240);
 }
-.navbar__links li a:hover {
+.navbar__links li a:hover, .navbar__links li .servicios .container__card--contenido a:focus, .servicios .container__card--contenido .navbar__links li a:focus {
   text-shadow: 2px 2px 3px rgb(139, 15, 77), 0 0 1em rgb(238, 215, 8), 0 0 0.2em rgb(241, 205, 238);
 }
 @keyframes animLogo {
@@ -241,11 +260,14 @@ body {
 }
 
 .navbar__checkbox:checked ~ .navbar__links {
-  display: block;
+  top: 120px;
+  z-index: 1;
 }
 
 @media (min-width: 900px) {
-  .navbar__checkbox, .fi-br-menu-burger, .fi-br-cross {
+  .navbar__checkbox,
+  .fi-br-menu-burger,
+  .fi-br-cross {
     display: none;
   }
   .navbar {
@@ -260,9 +282,10 @@ body {
     margin-top: 45px;
     top: -0.5px;
     right: 40px;
+    z-index: 1;
   }
 }
-footer {
+/*footer {
   background-color: hsl(288, 89%, 17%);
   color: #eebbd0;
   padding: 40px;
@@ -274,17 +297,19 @@ footer {
   align-items: center;
   border-top: 2px;
   width: 100%;
-}
-footer section {
-  text-align: center;
+
+  section {
+    text-align: center;
+  }
 }
 
 .iconos {
   display: flex;
-}
-.iconos img {
-  width: 50px;
-  height: 50px;
+
+  img {
+    width: 50px;
+    height: 50px;
+  }
 }
 
 .logo {
@@ -294,44 +319,297 @@ footer section {
 .data {
   display: flex;
   flex-direction: row;
-}
-.data__telefono img {
-  width: 60px;
-  height: 60px;
-}
-.data__mail img {
-  width: 60px;
-  height: 60px;
-}
-.data__direccion img {
-  width: 60px;
-  height: 60px;
+
+  &__telefono img {
+    @include footer-data-img;
+  }
+
+  &__mail img {
+    @include footer-data-img;
+  }
+
+  &__direccion img {
+    @include footer-data-img;
+  }
 }
 
-@media (min-width: 900px) {
+/////////////////////////////////////////////////////////////////////
+@media (min-width: $queries) {
   .logo {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
+
   .iconos img {
     width: 80px;
     height: 80px;
   }
+
   .data {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-content: center;
     align-items: center;
+
+    a {
+      color: #eebbd0;
+    }
+
+    img {
+      display: flex;
+      width: 80px;
+      height: 80px;
+    }
   }
-  .data a {
-    color: #eebbd0;
-  }
-  .data img {
+}
+footer {
+  background-color: #790744;
+  background-image: linear-gradient(     225deg, #790744 0%, #784ba0 33%,  #87069e 66%, #3b0554 100%  );  
+  padding: 80px 0;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+
+
+  &__row {
     display: flex;
-    width: 80px;
-    height: 80px;
+    flex-wrap: wrap;  
+
+    &--logo {
+      display: flex;
+
+    }
+
+     &--links{
+       width: 100%;
+       margin-bottom: 30px;
+
+
+      h4{
+        font-size: 20px;
+        color: $color-menu;
+        margin-bottom: 20px;
+        font-weight: 500;
+        border-bottom: 2px solid #faeead;
+        padding-bottom: 10px;
+        display: inline-block;
+      }
+
+     a{
+        font-size: 18px;
+        color: rgb(250, 183, 244);
+        display: block;
+        margin-bottom: 15px;
+        transition: all .3s ease;
+
+        :hover{
+          color: rgb(245, 193, 130);
+          padding-left: 6px;         
+
+        }
+      }
+
+      &--iconos{
+        display: inline-block;
+        min-height: 40px;
+        width: 40px;
+        background-color: rgb(130, 5, 219);
+        margin: 0 10px 10px 0;
+        text-align: center;
+        line-height: 40px;
+        border-radius: 50%;
+        color: rgb(243, 158, 222);
+        transition: all .5s ease;
+
+
+        :hover{
+          background-color: #a7085d;
+
+        }
+
+
+      }
+    }
+
+  }
+}
+  }
+
+
+
+  }*/
+.footer {
+  background-color: #790744;
+  background-image: linear-gradient(225deg, #790744 0%, #784ba0 33%, #87069e 66%, #3b0554 100%);
+  padding: 10px 0px 0;
+  font-family: "Aristotelica";
+}
+.footer__header {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0 auto;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.footer__header--logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.footer__header--logo img {
+  width: 50px;
+  height: 50px;
+}
+.footer__header--logo--logotipo {
+  font-size: 18px;
+  color: rgb(230, 180, 240);
+}
+.footer__header--redes {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 20px;
+}
+.footer__header--redes--fb {
+  background: rgb(168, 187, 228);
+  padding: 4px;
+  border-radius: 25px;
+  color: white;
+  width: 25px;
+  height: 25px;
+  border-radius: 50px;
+  color: white;
+}
+.footer__header--redes--in {
+  background: rgb(243, 189, 243);
+  padding: 4px;
+  border-radius: 25px;
+  color: white;
+  width: 25px;
+  height: 25px;
+  border-radius: 50px;
+  color: white;
+}
+.footer__header--redes--li {
+  background: rgb(154, 191, 245);
+  padding: 2px;
+  border-radius: 50px;
+  color: white;
+}
+.footer__section {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  flex-wrap: wrap;
+}
+.footer__section h3 {
+  color: rgb(245, 156, 240);
+  padding: 10px 0;
+}
+.footer__section a {
+  color: rgb(220, 187, 241);
+  text-decoration: none;
+  padding: 5px;
+}
+.footer__section a:hover, .footer__section .servicios .container__card--contenido a:focus, .servicios .container__card--contenido .footer__section a:focus, .footer__section a:focus {
+  box-shadow: 0 0 0 0 rgb(233, 197, 238), inset 6em 3.5em 0 0 purple;
+  color: aliceblue;
+}
+.footer__section form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.footer__section form input {
+  width: 50%;
+}
+.footer__section form button {
+  width: 50%;
+  padding: 8px;
+  background-color: darkmagenta;
+  color: white;
+  font-family: "Aristotelica";
+}
+.footer__derechos {
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+  background: #230131;
+  color: white;
+  margin-top: 30px;
+  position: sticky;
+}
+
+@media (min-width: 900px) {
+  .footer__header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    align-items: center;
+  }
+  .footer__header img {
+    width: 100px;
+    height: 100px;
+  }
+  .footer__header--logotipo {
+    font-size: 18px;
+  }
+  .footer__header--redes {
+    display: flex;
+    gap: 20px;
+    padding-right: 30px;
+    font-size: 23px;
+  }
+  .footer__header--redes--fb {
+    background: rgb(168, 187, 228);
+    padding: 8px;
+    border-radius: 50px;
+    color: white;
+    width: 40px;
+    height: 40px;
+  }
+  .footer__header--redes--fb--in {
+    background: rgb(243, 189, 243);
+    padding: 8px;
+    border-radius: 50px;
+    color: white;
+    width: 40px;
+    height: 40px;
+  }
+  .footer__header--redes--fb--li {
+    background: rgb(154, 191, 245);
+    padding: 8px;
+    border-radius: 50px;
+    color: white;
+    width: 40px;
+    height: 40px;
+  }
+  .footer__section {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: space-around;
+    gap: 40px;
+  }
+  .footer__section div {
+    display: flex;
+    flex-direction: column;
+  }
+  .footer__section form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .footer__section form input {
+    border: solid 2px white;
+    padding: 10px 20px;
   }
 }
 .contacto__container {
@@ -365,7 +643,7 @@ footer section {
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
 }
-.btn-hover:hover {
+.btn-hover:hover, .servicios .container__card--contenido a.btn-hover:focus {
   background-position: 100% 0;
   transition: all 0.4s ease-in-out;
   -o-transition: all 0.4s ease-in-out;
@@ -389,81 +667,72 @@ footer section {
 
 .servicios {
   margin-top: 60px;
-  margin-bottom: 60px;
   padding: 0 20px;
 }
 .servicios__titulo, .ubicacionNewsletter__ubicacion--titulo {
   font-size: 35px;
-  font-family: "Richard Samuels";
+  font-family: "Aristotelica";
   color: darkmagenta;
   text-align: center;
   padding: 70px 0;
 }
-.servicios__cards {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 50px;
-  text-align: center;
-  justify-content: center;
-  justify-items: center;
+.servicios .container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  max-width: 1100px;
+  align-items: center;
 }
-
-.cards {
-  box-shadow: -5px 8px 8px 8px #67377e;
+.servicios .container__card {
+  box-shadow: -5px 8px 8px 8px #615964;
   cursor: default;
-  transition: all 400ms ease;
-  border-radius: 3%;
-  object-fit: cover;
-  height: 655px;
-  background-color: #f799ea;
-  padding-bottom: 50px;
-  max-width: 1200px;
+  transition: all 0.3s;
+  border-radius: 10px;
+  background-color: #f5daf3;
   width: 100%;
+  margin: 20px;
+  /*border-radius: 6px;*/
+  overflow: hidden;
+  /*background-color: #f5daf3;
+  box-shadow: 2px 2px 30px rgba(241, 56, 217, 0.4);
+  cursor: default;
+  transition: all 400ms ease;*/
 }
-.cards__header img {
+.servicios .container__card:hover, .servicios .container__card--contenido a.container__card:focus {
+  box-shadow: 5px 5px 50px rgb(100, 5, 100);
+}
+.servicios .container__card img {
   width: 100%;
-  height: 65vh;
-  border-radius: 5%;
+  height: 210px;
+}
+.servicios .container__card--contenido {
   padding: 15px;
+  text-align: center;
 }
-.cards:hover {
-  box-shadow: -5px 8px 8px 8px rgb(221, 7, 157);
-  transform: translateY(-4%);
-}
-.cards__title {
-  font-family: "Richard Samuels";
-  padding-top: 10px;
-  color: #7c0647;
-  font-size: 25px;
-}
-.cards__descripcion {
-  color: #6e0d59;
-  font-size: 20px;
-  margin: 25px;
+.servicios .container__card--contenido p {
+  line-height: 1.5;
+  color: #430246;
   font-family: "Fowviel";
 }
-.cards__link {
-  color: #320136;
-  border: 3px solid purple;
-  margin-top: 20px;
-  margin-bottom: 30px;
+.servicios .container__card--contenido h2 {
+  font-weight: 400;
+  margin-bottom: 15px;
+  font-family: "Aristotelica";
+  color: darkmagenta;
+}
+.servicios .container__card--contenido a {
+  display: inline-block;
   padding: 10px;
-  width: 100%;
-  border-radius: 5px;
-  font-size: 15px;
-  font-weight: bold;
-  text-align: center;
-  cursor: pointer;
-  box-shadow: 0.3em 0.3em 0.3em 0 purple;
-  box-shadow: inset 0.3em 0.3em 0.3em 0 purple;
+  margin-top: 10px;
+  color: #57035f;
+  border: 1px solid rgb(72, 4, 99);
+  border-radius: 4px;
+  transition: all 400ms ease;
 }
-.cards__link:hover, .cards__link:focus {
-  box-shadow: 0 0 0 0 rgb(233, 197, 238), inset 6em 3.5em 0 0 purple;
-  color: aliceblue;
+.servicios .container__card--contenido a:hover, .servicios .container__card--contenido a:focus {
+  background-color: #57035f;
+  color: rgb(236, 212, 245);
 }
-
 .ubicacionNewsletter {
   display: flex;
   flex-direction: column;
@@ -511,7 +780,7 @@ footer section {
   display: block;
 }
 .newsletter__form--container--titulo {
-  font-family: "Richard Samuels";
+  font-family: "Aristotelica";
   font-size: 45px;
   color: darkmagenta;
   padding: 20px;
@@ -545,6 +814,7 @@ footer section {
   width: 100%;
   display: flex;
   justify-content: center;
+  margin: 0 auto;
 }
 .newsletter__form input[type=submit] {
   min-width: 130px;
@@ -570,7 +840,7 @@ footer section {
 .newsletter__form input[type=submit]:hover {
   color: #f5daf3;
   background-position: right center;
-  font-size: 20px;
+  font-size: 18px;
 }
 .newsletter__form input[type=submit]:hover:after {
   height: 100%;
@@ -587,25 +857,15 @@ footer section {
   .servicios__titulo, .ubicacionNewsletter__ubicacion--titulo {
     font-size: 45px;
   }
-  .servicios__cards {
-    grid-template-columns: repeat(3, 1fr);
+  .servicios .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
   }
-  .cards {
-    box-shadow: -5px 8px 8px 8px #67377e;
-    cursor: default;
-    transition: all 400ms ease;
-    border-radius: 3%;
-    object-fit: cover;
-    height: 655px;
-    background-color: #f799ea;
-    padding-bottom: 50px;
-    max-width: 1200px;
-  }
-  .cards__header img {
-    object-fit: cover;
-  }
-  .cards__link {
-    font-size: 20px;
+  .servicios .container__card {
+    width: 50%;
   }
   .ubicacionNewsletter__ubicacion {
     margin-left: 35px;
@@ -623,7 +883,7 @@ footer section {
 .container__port h1, .container__contacto h1, .portada__mk--container h1 {
   display: flex;
   align-items: center;
-  font-size: 60px;
+  font-size: 50px;
   position: absolute;
   color: rgb(82, 5, 82);
   text-shadow: -1px -1px 5px #eebdee, 0 0 1px rgb(203, 148, 235), 1px 1px 1px rgb(167, 44, 238), 2px 2px 1px #555, 3px 3px 1px #222, 4px 4px 1px #000;
@@ -631,7 +891,7 @@ footer section {
 
 .container__info--consultoria h2 {
   font-size: 35px;
-  font-family: "Richard Samuels";
+  font-family: "Aristotelica";
   color: darkmagenta;
   text-align: center;
   text-align: center;
@@ -651,10 +911,11 @@ footer section {
 
 .container__info--consultoria--growth, .container__info--consultoria--beneficios {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: auto;
   display: grid;
   grid-template-columns: 1fr;
   column-gap: 50px;
+  place-items: center;
 }
 .container__info--consultoria--growth--imagen, .container__info--consultoria--beneficios--imagen {
   margin: 30px;
@@ -702,6 +963,9 @@ footer section {
     text-align: left;
     letter-spacing: 1.5px;
   }
+}
+header ul {
+  padding-left: 0;
 }
 header a {
   text-decoration: none;
@@ -773,7 +1037,7 @@ header a {
 
 .titulo__form {
   font-size: 35px;
-  font-family: "Richard Samuels";
+  font-family: "Aristotelica";
   color: darkmagenta;
   text-align: center;
   margin: 30px;
@@ -827,7 +1091,7 @@ input[type=text], select, textarea {
   box-shadow: 0 4px 15px 0 rgba(83, 5, 102, 0.75);
   font-family: Arial, Helvetica, sans-serif;
 }
-.boton-enviar:hover {
+.boton-enviar:hover, .servicios .container__card--contenido a.boton-enviar:focus {
   background-position: 100% 0;
   transition: all 0.4s ease-in-out;
   -o-transition: all 0.4s ease-in-out;

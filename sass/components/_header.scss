@@ -130,121 +130,110 @@
 }
 */
 
-
-.navbar{
-	background-color: $color-header;
-	padding: 20px 12px;
-	height: 125px;
-	position: relative;
-	
-
-	.fi-br-cross{
-		display: none;
-	}
-
-	&__logo--img{
-
-		position: absolute;
-		bottom: 0.5px;						
-	    animation-duration: 5s;
-		animation-name: animLogo;
-		animation-iteration-count: infinite;
-		  }
+.navbar {
+  background-color: $color-header;
+  padding: 20px 12px;
+  height: 120px;
+  position: relative;
+ 
 
 
-    &__checkbox {
-		/*@include nav;*/
-		opacity: 0;	
+  .fi-br-cross {
+    display: none;
+  }
 
-	}
-	&__icons{		
-		/*@include nav;*/
-		pointer-events: none;
-		font-size: 30px;
-		color: $background-ham;}
+  &__logo--img {
+    height: 120px;
+    width: 120px;
+    position: absolute;
+    bottom: 0.5px;
+    animation-duration: 5s;
+    animation-name: animLogo;
+    animation-iteration-count: infinite;
+  }
 
-	&__links{
-		width: 400px;
-		position: absolute;
-		top: 100px;
-		right:0px;
-		color:$color-menu;
-		font-family: $fuente;
-		font-size: 25px;
-		display: none;
+  &__checkbox {
+    @include nav;
+    opacity: 0;
+  }
+  &__icons {
+    @include nav;
+    pointer-events: none;
+    font-size: 24px;
+    color: $background-ham;
+  }
 
+  &__links {
+    width: 100%;
+    position: absolute;
+    top: -250px;
+    z-index: -1;
+    right: 0px;
+    color: $color-menu;
+    font-family: $fuente;
+    font-size: 20px;  
+  
+    
 
-		li a{
-			display: block;
-			padding: 10px 12px;
-			background-color: $color-header;
-			color:$color-menu;}
+    li a {
+      display: block;
+      padding: 10px 15px;
+      background-color: $color-header;
+      color: $color-menu;
+   
+    }
 
-		li a:hover{ 				
-				text-shadow: 2px 2px 3px rgb(139, 15, 77), 0 0 1em rgb(238, 215, 8), 0 0 0.2em rgb(241, 205, 238);
-	
+    li a:hover {
+      text-shadow: 2px 2px 3px rgb(139, 15, 77), 0 0 1em rgb(238, 215, 8),
+        0 0 0.2em rgb(241, 205, 238);
+    }
+  }
+  @keyframes animLogo {
+    from {
+      -webkit-transform: rotate(0deg);
+      transform: rotateY(0deg);
+    }
+    50% {
+      -webkit-transform: rotate(180deg);
+      transform: rotateY(180deg);
+    }
+    to {
+      -webkit-transform: rotate(360deg);
+      transform: rotateY(360deg);
+    }
+  }
+}
+.navbar__checkbox:checked ~ .fi-br-menu-burger {
+  display: none;
+}
+.navbar__checkbox:checked ~ .fi-br-cross {
+  display: block;
+}
+.navbar__checkbox:checked ~ .navbar__links { 
+  top: 120px;
+  z-index:1;
+}
 
-			}	
-	
-	} 	
-	@keyframes animLogo{
-		from {
-			-webkit-transform: rotate(0deg);
-			transform: rotateY(0deg);
-		}
-		50%{
-			-webkit-transform: rotate(180deg);
-			transform: rotateY(180deg);
-		} to {
-			-webkit-transform: rotate(360deg);
-			transform: rotateY(360deg);
-			}
-	}	
-		
-	}
-	.navbar__checkbox:checked ~ .fi-br-menu-burger{
-		display: none;
-	}	
-	.navbar__checkbox:checked ~	.fi-br-cross{
-		display: block
-	}
-	.navbar__checkbox:checked ~ .navbar__links{
-		display: block;
-	}
+@media (min-width: $queries) {
+  .navbar__checkbox,
+  .fi-br-menu-burger,
+  .fi-br-cross {
+    display: none;
+  }
+  .navbar {
+    display: flex;
+  }
 
+  .navbar__links {
+    display: flex;
+    flex-direction: row;
+    width: unset;
+    position: absolute;
+    align-self: center;
+    margin-top: 45px;
+    top: -0.5px;
+    right: 40px;
+    z-index: 1;
 
-	@media (min-width: $queries){
-
-
-		.navbar__checkbox ,.fi-br-menu-burger, .fi-br-cross{
-			display: none;
-
-			
-		}
-		.navbar{
-			display: flex;
-		}
-
-		.navbar__links{
-		
-			display: flex;
-			flex-direction: row;
-			width: unset;
-			position: absolute;
-			align-self: center;
-			margin-top: 45px;			
-			top:-0.5px;			
-			right: 40px;
-
-			
-		
-
-			
-			
-
-			
-		}
-	}
-
-
-
+  }
+}

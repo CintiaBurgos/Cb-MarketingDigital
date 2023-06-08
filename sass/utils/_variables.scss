@@ -16,9 +16,10 @@ $gradbody2: #efb9f1;
 
 //fuentes //
 /*Tipo*/
-$fuente: "Richard Samuels"; //fuente header y h1//
+$fuente: "Aristotelica"; //fuente header -footer y h1//
 $fuentenews: "Fowviel";
-/*Tamaño*/
+
+
 
 //width medida//
 
@@ -31,29 +32,36 @@ $textali: center;
 //medias queries//
 
 $queries: 900px;
+$bpSmall: 576px;
+$bpMedium: 768px;
 
+
+///display///
 $tipo: flex;
 $direccion: row;
+//transition//
+$transition: all 0.3s;
+
+
+
+
+
+// extend
+
 
 //Mixins//
-
-///header///
-
-@mixin header-be-af {
-  background: white;
-  content: "";
-  display: block;
-  height: 100%;
-  position: absolute;
-  transition: all 0.2s ease-out;
-  width: 100%;
+@mixin nav{
+  width: 24px;
+	height: 24px;
+	position: absolute;
+	top: 50px;
+	right:50px;
+  cursor: pointer;
 }
-///footer////
 
-@mixin footer-data-img {
-  width: 60px;
-  height: 60px;
-}
+
+
+//body//
 
 @mixin backbody {
   background: $bkgbody;
@@ -88,15 +96,13 @@ $direccion: row;
   text-align: $textali;
 }
 @mixin cards {
-  box-shadow: -5px 8px 8px 8px #67377e;
+  box-shadow: -5px 8px 8px 8px #615964;
   cursor: default;
-  transition: all 400ms ease;
-  border-radius: 3%;
-  object-fit: cover;
-  height: 655px;
-  background-color: #f799ea;
-  padding-bottom: 50px;
-  max-width: 1200px;
+  transition: all 0.3s;
+  border-radius: 10px; 
+  background-color:#f5daf3;
+
+ 
 }
 
 @mixin display {
@@ -133,4 +139,24 @@ $direccion: row;
   display: grid;
   grid-template-columns: 1fr;
   column-gap: 50px;
+}
+
+
+//mivin desktop//
+@mixin redes-footer{
+    padding: 8px;
+    border-radius: 50px;
+    color: white;
+    width: 40px;
+    height: 40px;
+
+}
+@mixin redes-footer-mobile{
+  padding: 4px;
+  border-radius: 25px;
+  color: white;
+  width: 25px;
+  height:25px;
+
+
 }
