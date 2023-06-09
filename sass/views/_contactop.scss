@@ -1,6 +1,7 @@
 .container__contacto{
+  padding: auto 0;
     @extend .container__port;
-    h1{
+    /*h1{
         color:rgb(241, 149, 95);
         text-shadow: -1px -1px 5px #131312,
         0 0 1px rgb(64, 6, 97),
@@ -10,12 +11,12 @@
         4px 4px 1px #000;
         text-align: center;
         
-    }   
+    }   */
   }
  
   .titulo__form{
     @include titulo;
-    margin: 30px;
+    margin: 50px;
     letter-spacing: 1.5px;   
   }
       
