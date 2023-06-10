@@ -40,8 +40,14 @@
     outline: none;
   }
   &.color {
-	margin: auto 0;
-    background-image: linear-gradient( to right, #ed6ea0, #ec8c69, #f7186a, #fbb03b  );
+    margin: auto 0;
+    background-image: linear-gradient(
+      to right,
+      #ed6ea0,
+      #ec8c69,
+      #f7186a,
+      #fbb03b
+    );
     box-shadow: 0 4px 15px 0 rgba(83, 5, 102, 0.75);
     font-family: Arial, Helvetica, sans-serif;
   }

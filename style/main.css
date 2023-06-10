@@ -388,7 +388,7 @@ body {
   padding: 0 20px;
 }
 .servicios__titulo, .ubicacionNewsletter__ubicacion--titulo {
-  font-size: 35px;
+  font-size: 30px;
   font-family: "Aristotelica";
   color: darkmagenta;
   text-align: center;
@@ -618,7 +618,7 @@ body {
 }
 
 .container__info--consultoria h2 {
-  font-size: 35px;
+  font-size: 30px;
   font-family: "Aristotelica";
   color: darkmagenta;
   text-align: center;
@@ -856,33 +856,34 @@ header a {
 .container__contacto {
   padding: auto 0;
   /*h1{
-      color:rgb(241, 149, 95);
-      text-shadow: -1px -1px 5px #131312,
-      0 0 1px rgb(64, 6, 97),
-      1px 1px 1px rgb(109, 8, 109),
-      2px 2px 1px #ddb7f7,
-      3px 3px 1px #615151,
-      4px 4px 1px #000;
-      text-align: center;
+        color:rgb(241, 149, 95);
+        text-shadow: -1px -1px 5px #131312,
+        0 0 1px rgb(64, 6, 97),
+        1px 1px 1px rgb(109, 8, 109),
+        2px 2px 1px #ddb7f7,
+        3px 3px 1px #615151,
+        4px 4px 1px #000;
+        text-align: center;
 
-  }   */
+    }   */
 }
 
-.titulo__form {
-  font-size: 35px;
+.titulo__form h2 {
+  font-size: 30px;
   font-family: "Aristotelica";
   color: darkmagenta;
   text-align: center;
   margin: 50px;
   letter-spacing: 1.5px;
+  font-size: 25px;
 }
 
 .container-formulario {
+  padding: auto 0;
   margin: 40px;
-  width: 80%;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(196deg, #630F80 0%, #CA4B93 57%, #E80F65 100%);
+  background: linear-gradient(196deg, #630f80 0%, #ca4b93 57%, #e80f65 100%);
   border-radius: 8px;
   padding: 15px;
 }
@@ -892,7 +893,9 @@ header a {
   font-size: 20px;
 }
 
-input[type=text], select, textarea {
+input[type=text],
+select,
+textarea {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -900,12 +903,12 @@ input[type=text], select, textarea {
   border: 1px solid rgb(241, 199, 241);
   border-radius: 6px;
   box-sizing: border-box;
-  background: linear-gradient(196deg, rgba(231, 181, 251, 0.78) 0%, #f09ecc 57%, #FFE0EC 100%);
+  background: linear-gradient(196deg, rgba(231, 181, 251, 0.78) 0%, #f09ecc 57%, #ffe0ec 100%);
 }
 
 .boton-enviar {
   display: block;
-  width: 200px;
+  width: 150px;
   font-size: 15px;
   font-weight: 600;
   color: #fff;
@@ -920,7 +923,7 @@ input[type=text], select, textarea {
   -o-transition: all 0.4s ease-in-out;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
-  background-image: linear-gradient(to right, #bd48eb, #ec8c69, #e910a8, #FBB03B);
+  background-image: linear-gradient(to right, #bd48eb, #ec8c69, #e910a8, #fbb03b);
   box-shadow: 0 4px 15px 0 rgba(83, 5, 102, 0.75);
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -936,9 +939,14 @@ input[type=text], select, textarea {
 }
 
 @media (min-width: 900px) {
+  .titulo__form h2 {
+    font-size: 40px;
+    text-align: center;
+  }
   .container-formulario {
     margin-left: 120px;
     margin-bottom: 120px;
+    width: 80%;
   }
 }
 

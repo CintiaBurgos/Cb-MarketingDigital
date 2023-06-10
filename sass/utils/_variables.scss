@@ -19,8 +19,6 @@ $gradbody2: #efb9f1;
 $fuente: "Aristotelica"; //fuente header -footer y h1//
 $fuentenews: "Fowviel";
 
-
-
 //width medida//
 
 $gen-width: 100%;
@@ -35,31 +33,23 @@ $queries: 900px;
 $bpSmall: 576px;
 $bpMedium: 768px;
 
-
 ///display///
 $tipo: flex;
 $direccion: row;
 //transition//
 $transition: all 0.3s;
 
-
-
-
-
 // extend
 
-
 //Mixins//
-@mixin nav{
+@mixin nav {
   width: 24px;
-	height: 24px;
-	position: absolute;
-	top: 50px;
-	right:50px;
+  height: 24px;
+  position: absolute;
+  top: 50px;
+  right: 50px;
   cursor: pointer;
 }
-
-
 
 //body//
 
@@ -90,7 +80,7 @@ $transition: all 0.3s;
 }
 
 @mixin titulo {
-  font-size: 35px;
+  font-size: 30px;
   font-family: $fuente;
   color: $colortitulo;
   text-align: $textali;
@@ -99,10 +89,8 @@ $transition: all 0.3s;
   box-shadow: -5px 8px 8px 8px #615964;
   cursor: default;
   transition: all 0.3s;
-  border-radius: 10px; 
-  background-color:#f5daf3;
-
- 
+  border-radius: 10px;
+  background-color: #f5daf3;
 }
 
 @mixin display {
@@ -141,22 +129,18 @@ $transition: all 0.3s;
   column-gap: 50px;
 }
 
-
 //mivin desktop//
-@mixin redesdesktop{
-    padding: 8px;
-    border-radius: 50px;
-    color: white;
-    width: 40px;
-    height: 40px;
-
+@mixin redesdesktop {
+  padding: 8px;
+  border-radius: 50px;
+  color: white;
+  width: 40px;
+  height: 40px;
 }
-@mixin redesmobile{
+@mixin redesmobile {
   padding: 4px;
   border-radius: 25px;
   color: white;
   width: 25px;
-  height:25px;
-
-
+  height: 25px;
 }
